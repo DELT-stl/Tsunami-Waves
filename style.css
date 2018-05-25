@@ -3,8 +3,35 @@
     background-position: center top;
     background-repeat: no-repeat !important;
     background-size: contain;
-    height:83vh;
+    height: 83vh;
 }
+
 .container {
-    width:1100px !important;
+    width: 1100px !important;
+}
+
+.no-padding {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.half-vw {
+    width: 100%;
+    background-image: url(img/fan-photo.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 43vh;
+    position: relative;
+    float:left;
+}
+
+.statement-homepage {
+    width:100%;
+    display:inline-block;
+}
+.statement-homepage h2,
+.statement-homepage p {
+
+
 }
