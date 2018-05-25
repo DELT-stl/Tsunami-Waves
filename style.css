@@ -20,21 +20,36 @@
 
 .banner-homepage {
     height: 620px;
+    width: 100%;
+    display:block;
     overflow: hidden;
     margin-bottom: 100px;
 }
+
+.overlay {
+    top: 0;
+    left: 0;
+    height:620px;
+    width:auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    z-index:5;
+
+}
+
 .founded-by {
-    position:absolute;
-    width:100%;
+    position: absolute;
+    top: 30%;
     left: 50%;
 
 }
+
 .founded-by h2 {
-    left:-50%;
-    color: black;
+    left: -50%;
+    color: white;
     position: relative;
-    width: 20%;
-    text-align:center;
+    width: 100%;
+    text-align: center;
     font-family: 'Bravest';
 }
 
