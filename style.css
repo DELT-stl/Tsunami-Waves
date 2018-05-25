@@ -102,3 +102,10 @@
     height: 41vh;
     position: absolute;
 }
+.banner-homepage ul {
+    position:absolute;
+}
+.banner-homepage ul li {
+    text-transform: uppercase;
+    display:inline-block;
+}
