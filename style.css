@@ -2,26 +2,37 @@
     font-family: DK-magical;
     src: url('fonts/DK Magical Brush.otf');
 }
+
 @font-face {
     font-family: Bravest;
     src: url('fonts/BRAVEST FONT/Bravest.otf');
 }
-/*
-@font-face {
-    font-family: Hind-400;
-    src:
-}
-*/
-.banner-homepage {
+
+.banner-homepage div {
     background-image: url(img/Carlos-Mart%C3%ADnez.jpg);
     background-position: center top;
     background-repeat: no-repeat !important;
+    background-clip: border-box;
+    width: 100%;
+    /*    height:850px;*/
+    height: 78vh;
     background-size: contain;
-    height: 83vh;
 }
 
+.banner-homepage {
+    height: 620px;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.banner-homepage h2 {
+    color:white;
+}
+.banner-homepage h1 {
+    font-family: 'DK-magical';
+}
 .container {
-    width: 1200px !important;
+    width: 63vw !important;
 }
 
 .half-vw {
@@ -30,25 +41,56 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 43vh;
+    height: 41vh;
     position: relative;
-    float:left;
+    float: left;
 }
 
 .statement-homepage {
-    width:100%;
-    display:inline-block;
+    width: 100%;
+    height: 43vh;
 }
+
 .statement-homepage h2,
 .statement-homepage p {
-    margin-bottom:0;
-    padding-top:3vh;
+    margin-bottom: 0;
+    padding-top: 3vh;
 }
+
 .statement-homepage h2 {
     font-family: 'Bravest';
     text-transform: uppercase;
-    font-size:36px
+    font-size: 36px
 }
-.statement-homepage p {
-/*    font-family: 'Hind-400';*/
+
+.statement-homepage p {}
+
+.statement-homepage button {
+    width: 25%;
+    height: 10%;
+    border-radius: 20px;
+    background: yellow;
+    font-weight: bold;
+    float: right;
+    margin-top: 5%;
+    border: 0;
+}
+
+.family-photo div {
+    background-image: url(img/PAL-41-of-41.jpg);
+    border-radius: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    left: -50%;
+    height: 300px;
+    width: 300px;
+    margin-top: 90%;
+}
+
+.family-photo {
+    left: 50%;
+    height: 41vh;
+    position: absolute;
 }
