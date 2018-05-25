@@ -1,5 +1,10 @@
 .banner-homepage {
     background-image: url(img/Carlos-Mart%C3%ADnez.jpg);
-    background-position: center center cover;
-    background-repeat: no-repeat;
+    background-position: center top;
+    background-repeat: no-repeat !important;
+    background-size: contain;
+    height:83vh;
+}
+.container {
+    width:1100px !important;
 }
