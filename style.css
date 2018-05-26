@@ -175,7 +175,6 @@ button {
 }
 .visit-store .background {
     background-image: url(img/bwl-3.jpg);
-/*    background-position: center top;*/
     opacity:0.6;
     position:relative;
     width:100%;
@@ -192,6 +191,13 @@ button {
     top:30%;
 }
 .visit-store button {
+    left:5%;
+    position:absolute;
     height:8%;
+    top:58%;
     width:
+}
+
+.upcoming-events h1 {
+    color:grey;
 }
