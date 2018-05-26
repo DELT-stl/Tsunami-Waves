@@ -165,7 +165,7 @@ button {
     margin:auto;
 }
 .visit-store {
-    height:43vh;
+    height:64vh;
     overflow:hidden;
     width:100%;
     position:relative;
@@ -175,6 +175,7 @@ button {
 }
 .visit-store .background {
     background-image: url(img/bwl-3.jpg);
+/*    background-position: center top;*/
     opacity:0.6;
     position:relative;
     width:100%;
