@@ -8,9 +8,23 @@
     src: url('fonts/BRAVEST FONT/Bravest.otf');
 }
 
+h1 {
+    font-family:'DK-magical';
+    font-size: 110px;
+}
 h2,
 li {
     font-family: 'Bravest';
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* allows container to expand with growing content */
+  margin: 0;
+}
+.container {
+    width: 63vw !important;
+  min-height: 100vh; /* allows container to expand with growing content */
 }
 
 .banner-homepage {
@@ -27,7 +41,15 @@ li {
     background-image: url(img/fan-photo.jpg);
     height: 41vh;
     position: relative;
-    float: left;
+}
+
+.top-section {
+    height: 80vh;
+}
+
+.family-photo {
+    left: 50%;
+    position: absolute;
 }
 
 .family-photo .background {
@@ -38,7 +60,7 @@ li {
     height: 350px;
     width: 350px;
     z-index: 2;
-    margin-top: 78%;
+    margin-top: 27vh;
 }
 
 .background {
@@ -84,9 +106,6 @@ li {
     color: white;
 }
 
-.container {
-    width: 63vw !important;
-}
 
 .half-vw {
     height: 41vh;
@@ -117,24 +136,18 @@ li {
 .statement-homepage p {}
 
 button {
-    width: 25%;
-    height: 10%;
-    border-radius: 20px;
+    width: 150px;
+    height:50px;
+    border-radius: 50px;
     background: yellow;
     font-weight: bold;
     float: right;
     margin-top: 5%;
     border: 0;
-    position:relative;
-    z-index:1;
+    position: relative;
+    z-index: 1;
 }
 
-
-.family-photo {
-    left: 50%;
-    height: 41vh;
-    position: absolute;
-}
 
 .banner-homepage ul {
     position: absolute;
@@ -152,52 +165,73 @@ button {
     position: relative;
     display: inline-block;
 }
+
 .homepage-middle {
-    height:30vh;
-    position:relative;
-    top:25vh;
+    width: 100%;
+    height: 115vh;
+    position: relative;
 }
+
 .homepage-middle h2 {
     width: 80%;
     text-align: center;
-    position:relative;
-    margin-top:50%;
-    margin:auto;
-}
-.visit-store {
-    height:64vh;
-    overflow:hidden;
-    width:100%;
-    position:relative;
-    background-color: black;
-    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
-    top:15vh;
-}
-.visit-store .background {
-    background-image: url(img/bwl-3.jpg);
-    opacity:0.6;
-    position:relative;
-    width:100%;
-    height:100%;
-}
-.visit-store h2 {
-    color:white !important;
-    z-index:1;
-    position:absolute;
-    font-size:64px;
-    width:30%;
-    text-align: left;
-    left:5%;
-    top:30%;
-}
-.visit-store button {
-    left:5%;
-    position:absolute;
-    height:8%;
-    top:58%;
-    width:
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.upcoming-events h1 {
-    color:grey;
+.visit-store {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.visit-store .wrapper {
+    margin-top:15vh;
+    position: relative;
+    background-color: black;
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    height:69vh;
+}
+
+.visit-store .background {
+    background-image: url(img/bwl-3.jpg);
+    opacity: 0.6;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom:0;
+}
+
+.visit-store h2 {
+    color: white !important;
+    z-index: 1;
+    position: absolute;
+    font-size: 64px;
+    width: 30%;
+    text-align: left;
+    left: 5%;
+    top: 50%;
+}
+
+.visit-store button {
+    left: 5%;
+    position: absolute;
+    top: 72%;
+}
+
+.upcoming-events {
+    text-align:center;
+}
+
+.upcoming-events h1:nth-child(1) {
+    color: #DFDFDF;
+    font-size:90px;
+    width:80%;
+    margin:auto;
+    text-align: center;
+}
+
+.events-wrapper {
+    height: 79vh;
+    position:relative;
 }
