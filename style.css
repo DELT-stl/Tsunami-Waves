@@ -221,6 +221,8 @@ button {
 
 .upcoming-events {
     text-align:center;
+    height:35vh;
+    width:100%;
 }
 
 .upcoming-events h1:nth-child(1) {
@@ -230,6 +232,23 @@ button {
     margin:auto;
     text-align: center;
 }
+
+.upcoming-events h2 {
+    position:relative;
+    display:inline-block;
+    margin-top:5%;
+    line-height:30px;
+    font-size:20px;
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+
+}
+
+.upcoming-events .date {
+    font-size:80px
+}
+
 
 .events-wrapper {
     height: 79vh;
