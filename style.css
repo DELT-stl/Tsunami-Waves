@@ -9,27 +9,31 @@
 }
 
 h1 {
-    font-family:'DK-magical';
-    font-size: 110px;
+    font-family: 'DK-magical';
+    font-size: 6vw;
 }
+
 h2,
 li {
     font-family: 'Bravest';
 }
+
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* allows container to expand with growing content */
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0 !important;
 }
 .container {
     width: 63vw !important;
-  min-height: 100vh; /* allows container to expand with growing content */
+    min-height: 100vh;
 }
 
 .banner-homepage {
     background-image: url(img/top-img.jpg);
-    width: 100%;
     height: 56vh;
     overflow: hidden;
     position: relative;
@@ -37,7 +41,6 @@ body {
 }
 
 .fan-photo .background {
-    width: 100%;
     background-image: url(img/fan-photo.jpg);
     height: 41vh;
     position: relative;
@@ -67,6 +70,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    width:100%;
 }
 
 .overlay {
@@ -88,10 +92,10 @@ body {
 
 .founded-by h2 {
     left: -50%;
+    font-size:2vw;
     color: white;
     position: relative;
     top: 17%;
-    width: 100%;
     text-align: center;
 }
 
@@ -101,8 +105,6 @@ body {
     position: relative;
     text-align: center;
     top: 15%;
-    width: 100%;
-    font-size: 110px;
     color: white;
 }
 
@@ -110,7 +112,6 @@ body {
 .half-vw {
     height: 41vh;
     width: 100%;
-    height: 500px;
     overflow: hidden;
 }
 
@@ -130,14 +131,14 @@ body {
 
 .statement-homepage h2 {
     text-transform: uppercase;
-    font-size: 30px
+    font-size: 1.56vw;
 }
 
 .statement-homepage p {}
 
 button {
     width: 150px;
-    height:50px;
+    height: 50px;
     border-radius: 50px;
     background: yellow;
     font-weight: bold;
@@ -167,13 +168,13 @@ button {
 }
 
 .homepage-middle {
-    width: 100%;
     height: 115vh;
     position: relative;
 }
 
 .homepage-middle h2 {
     width: 80%;
+    font-size:1.56vw;
     text-align: center;
     position: relative;
     margin-left: auto;
@@ -182,31 +183,33 @@ button {
 
 .visit-store {
     overflow: hidden;
-    width: 100%;
     position: relative;
 }
+
 .visit-store .wrapper {
-    margin-top:15vh;
+    margin-top: 15vh;
     position: relative;
     background-color: black;
     -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
-    height:69vh;
+    -moz-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    -o-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    height: 69vh;
 }
 
 .visit-store .background {
     background-image: url(img/bwl-3.jpg);
     opacity: 0.6;
     position: absolute;
-    width: 100%;
     height: 100%;
-    bottom:0;
+    bottom: 0;
 }
 
 .visit-store h2 {
     color: white !important;
     z-index: 1;
     position: absolute;
-    font-size: 64px;
+    font-size: 3.3vw;
     width: 30%;
     text-align: left;
     left: 5%;
@@ -220,37 +223,44 @@ button {
 }
 
 .upcoming-events {
-    text-align:center;
-    height:35vh;
-    width:100%;
+    text-align: center;
+    height: 35vh;
+    width: 100%;
 }
 
 .upcoming-events h1:nth-child(1) {
     color: #DFDFDF;
-    font-size:90px;
-    width:80%;
-    margin:auto;
+    font-size: 4.6vw;
+    width: 80%;
+    margin: auto;
     text-align: center;
 }
 
 .upcoming-events h2 {
-    position:relative;
-    display:inline-block;
-    margin-top:5%;
-    line-height:30px;
-    font-size:20px;
-    margin-left:auto;
-    margin-right:auto;
-    width:40%;
+    position: relative;
+    display: inline-block;
+    margin-top: 5%;
+    line-height: 2.7777vh;
+    font-size: 1.0416667vw;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 
 }
 
 .upcoming-events .date {
-    font-size:80px
+    font-size: 3.1666vw;
 }
 
 
 .events-wrapper {
     height: 79vh;
-    position:relative;
+    position: relative;
+}
+@media only screen and (max-width:1366px) {
+        .family-photo .background {
+            width:250px !important;
+            bottom:-50px;
+            height:250px !important;
+        }
 }
