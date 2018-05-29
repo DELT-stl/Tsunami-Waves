@@ -10,7 +10,7 @@
 
 h1 {
     font-family: 'DK-magical';
-    font-size: 6vw;
+    font-size: 6vmax;
 }
 
 h2,
@@ -20,34 +20,36 @@ li {
 
 body {
     display: flex;
-    flex-direction: column;
-    margin: 0;
 }
 
 .no-padding {
     padding: 0 !important;
 }
+
 .container {
-    width: 63vw !important;
-    min-height: 100vh;
+    width: 63vmax !important;
+}
+
+p {
+    font-size: 2.5vmax;
 }
 
 .banner-homepage {
     background-image: url(img/top-img.jpg);
-    height: 56vh;
+    height: 56vmin;
     overflow: hidden;
     position: relative;
-    margin-bottom: 10vh;
+    margin-bottom: 10vmin;
 }
 
 .fan-photo .background {
     background-image: url(img/fan-photo.jpg);
-    height: 41vh;
+    height: 41vmin;
     position: relative;
 }
 
 .top-section {
-    height: 80vh;
+    height: 70vmin;
 }
 
 .family-photo {
@@ -57,20 +59,22 @@ body {
 
 .family-photo .background {
     background-image: url(img/PAL-41-of-41.jpg);
-    border-radius: 100%;
+    -webkit-clip-path: circle(30% at 50% 50%);
+    clip-path: circle(30% at 50% 50%);
+    transform: scale(1.8);
     position: relative;
+    width: 13vmax;
+    height: 23.148vmin;
     left: -50%;
-    height: 350px;
-    width: 350px;
     z-index: 2;
-    margin-top: 27vh;
+    margin-top: 29vmin;
 }
 
 .background {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    width:100%;
+    width: 100%;
 }
 
 .overlay {
@@ -92,7 +96,7 @@ body {
 
 .founded-by h2 {
     left: -50%;
-    font-size:2vw;
+    font-size: 2vmax;
     color: white;
     position: relative;
     top: 17%;
@@ -109,8 +113,8 @@ body {
 }
 
 
-.half-vw {
-    height: 41vh;
+.half-vmax {
+    height: 41vmin;
     width: 100%;
     overflow: hidden;
 }
@@ -118,27 +122,29 @@ body {
 
 .statement-homepage {
     width: 100%;
-    padding-left: 2%;
-    padding-right: 2%;
-    height: 43vh;
+    height: 43vmin;
 }
 
-.statement-homepage h2,
-.statement-homepage p {
+.statement-homepage h2 {
     margin-bottom: 0;
-    padding-top: 3vh;
+    padding-top: 2vmin;
 }
 
 .statement-homepage h2 {
     text-transform: uppercase;
-    font-size: 1.56vw;
+    font-size: 1.46vmax;
 }
 
-.statement-homepage p {}
+.statement-homepage p {
+    padding-top: 2vmin;
+    font-size: 1.1vmax;
+
+}
 
 button {
-    width: 150px;
-    height: 50px;
+    /*    width: 150px;*/
+    width: 7.8125vmax;
+    height: 4.6296296vmin;
     border-radius: 50px;
     background: yellow;
     font-weight: bold;
@@ -147,6 +153,7 @@ button {
     border: 0;
     position: relative;
     z-index: 1;
+    font-size: 1vmax;
 }
 
 
@@ -155,26 +162,27 @@ button {
     color: white;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
 }
 
 .banner-homepage ul li {
     text-transform: uppercase;
     float: right;
-    padding-right: 50px;
-    padding-top: 20px;
+    padding-right: 2.6041667vmax;
+    padding-top: 1.8518519vmax;
+    font-size: 0.8833333vmax;
     position: relative;
     display: inline-block;
 }
 
 .homepage-middle {
-    height: 115vh;
+    height: 115vmin;
     position: relative;
 }
 
 .homepage-middle h2 {
     width: 80%;
-    font-size:1.56vw;
+    font-size: 1.56vmax;
     text-align: center;
     position: relative;
     margin-left: auto;
@@ -187,14 +195,14 @@ button {
 }
 
 .visit-store .wrapper {
-    margin-top: 15vh;
+    margin-top: 15vmin;
     position: relative;
     background-color: black;
     -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
     -moz-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
     -o-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
-    height: 69vh;
+    height: 69vmin;
 }
 
 .visit-store .background {
@@ -209,9 +217,10 @@ button {
     color: white !important;
     z-index: 1;
     position: absolute;
-    font-size: 3.3vw;
-    width: 30%;
+    font-size: 3.3vmax;
+    width: 40%;
     text-align: left;
+    line-height:3.5vmax;
     left: 5%;
     top: 50%;
 }
@@ -219,18 +228,18 @@ button {
 .visit-store button {
     left: 5%;
     position: absolute;
-    top: 72%;
+    bottom:15%;
 }
 
 .upcoming-events {
     text-align: center;
-    height: 35vh;
+    height: 35vmin;
     width: 100%;
 }
 
 .upcoming-events h1:nth-child(1) {
     color: #DFDFDF;
-    font-size: 4.6vw;
+    font-size: 4.6vmax;
     width: 80%;
     margin: auto;
     text-align: center;
@@ -240,8 +249,8 @@ button {
     position: relative;
     display: inline-block;
     margin-top: 5%;
-    line-height: 2.7777vh;
-    font-size: 1.0416667vw;
+    line-height: 2.7777vmin;
+    font-size: 1.0416667vmax;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
@@ -249,18 +258,11 @@ button {
 }
 
 .upcoming-events .date {
-    font-size: 3.1666vw;
+    font-size: 3.1666vmax;
 }
 
 
 .events-wrapper {
-    height: 79vh;
+    height: 79vmin;
     position: relative;
-}
-@media only screen and (max-width:1366px) {
-        .family-photo .background {
-            width:250px !important;
-            bottom:-50px;
-            height:250px !important;
-        }
 }
