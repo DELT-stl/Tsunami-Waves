@@ -347,14 +347,17 @@ button {
 
 .page-transition {
     width:100vw !important;
-    height: 800px !important;
-    position:absolute;
+/*    height: 800px !important;*/
+/*    position:relative;*/
     top:0;
     left:0;
 }
+.increase {
+    transform: scale(3);
+}
 .upcoming-events {
     text-align:center;
-    height:35vh;
+    height:85vh;
     width:100%;
 }
 
@@ -388,6 +391,9 @@ button {
     position:relative;
 }
 
+.flex-row {
+    display:flex;
+}
 
 
 
