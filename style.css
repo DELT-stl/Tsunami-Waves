@@ -324,8 +324,9 @@ button {
 }
 .slanted img {
 	width: 100%;
-	height: 600px;
+	height: 400px;
 	object-fit: cover;
+    transition:3s;
 	opacity: .8
 }
 .slanted h2 {
@@ -344,6 +345,13 @@ button {
 	transform: translateY(-50%);
 }
 
+.page-transition {
+    width:100vw !important;
+    height: 800px !important;
+    position:absolute;
+    top:0;
+    left:0;
+}
 .upcoming-events {
     text-align:center;
     height:35vh;
