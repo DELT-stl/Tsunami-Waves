@@ -8,34 +8,236 @@
     src: url('fonts/BRAVEST FONT/Bravest.otf');
 }
 
-.banner-homepage div {
-    background-image: url(img/Carlos-Mart%C3%ADnez.jpg);
-    background-position: center top;
-    background-repeat: no-repeat !important;
-    background-clip: border-box;
-    width: 100%;
-    /*    height:850px;*/
-    height: 78vh;
-    background-size: contain;
+h1 {
+    font-family:'DK-magical';
+    font-size: 110px;
 }
+a {
+	color: #141414
+}
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+.center {
+	text-align: center
+}
+body {
+	overflow-x: hidden;
+	font-size: 17px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	color: #141414;
+	line-height: 29px;
+	font-family: 'Hind', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	color: #141414;
+	margin-bottom: 10px;
+	font-weight: 400;
+	letter-spacing: 0px;
+}
+h1 {
+	font-size: 110px;
+	line-height: 83px;
+	margin-bottom: 25px;
+	color: #fff;
+	font-family:'DK-magical';
+}
+.head1 {
+	font-family:'DK-magical';
+	font-size: 80px;
+	line-height: 80px;
+}
+h2, .head2{
+	font-size: 30px;
+	line-height: 40px;
+	margin-bottom: 15px;
+	color: #141414;
+	font-family: 'Bravest';
+}
+h3, .head3 {
+	font-size: 35px;
+	line-height: 40px;
+	text-transform: uppercase;
+	font-family: 'Bravest';
+}
+
+h4, .head4 {
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-bottom: 10px;
+	line-height: 30px;
+	font-family: 'Bravest';
+}
+h5 {
+	font-size: 16px;
+	line-height: 20px;
+	text-transform: uppercase;
+	margin-bottom: 0px
+}
+h2,
+li {
+    font-family: 'Bravest';
+}
+
+.container {
+    width: 80vw !important;
+	max-width: 1400px;
+	position: relative;
+}
+.contain {
+	width: 900px;
+	margin: auto;
+	text-align: center;
+	position: relative;
+}
+.inner {
+	padding-top: 140px;
+	padding-bottom: 140px;
+	position: relative;
+}
+.inner2 {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.pd {
+	height: 110px
+}
+.rnp {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+.rnp [class*="col-"] {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.cpr {
+	padding-right: 10vw;
+	padding-left: 90px
+}
+.round {
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	object-fit: cover;
+	border-radius: 100%;
+}
+.round1 {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%)
+}
+.round1height {
+	height: 600px;
+	margin-bottom: 75px
+}
+/*====MENU====*/
+.main-menu {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+
+}
+.main-menu ul {
+	position: absolute;
+	right: 10%;
+	height: 70px
+}
+.main-menu li {
+	list-style: none;
+	display: inline-block;
+	color: #fff;
+	line-height: 70px;
+	margin-left: 25px;
+	font-size: 14px
+}
+
+/*====HOMEPAGE====*/
 
 .banner-homepage {
-    height: 620px;
+    background-image: url(img/top-img.jpg);
+    width: 100%;
+    height: 800px;
     overflow: hidden;
-    margin-bottom: 100px;
+    position: relative;
 }
 
-.banner-homepage h2 {
-    color: white;
+.fan-photo .background {
+    width: 100%;
+    background-image: url(img/fan-photo.jpg);
+    height: 600px;
+    position: relative;
+}
+
+.top-section {
+    height: 80vh;
+	position: relative
+}
+
+.family-photo {
+    left: 50%;
+    position: absolute;
+}
+
+.family-photo .background {
+    background-image: url(img/PAL-41-of-41.jpg);
+    border-radius: 100%;
+    position: relative;
+    left: -50%;
+    height: 350px;
+    width: 350px;
+    z-index: 2;
+    margin-top: 27vh;
+}
+
+.background {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.founded-by {
+    position: absolute;
+    bottom: 300px;
+    left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	text-align: center
+}
+.founded-by h2 {
+	color: #fff
 }
 
 .banner-homepage h1 {
     font-family: 'DK-magical';
+    position: relative;
+    text-align: center;
+    top: 15%;
+    width: 100%;
+    font-size: 110px;
+    color: white;
 }
 
-.container {
-    width: 63vw !important;
-}
 
 .half-vw {
     height: 41vh;
@@ -44,20 +246,11 @@
     overflow: hidden;
 }
 
-.half-vw div {
-    width: 100%;
-    background-image: url(img/fan-photo.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    height: 41vh;
-    position: relative;
-    float: left;
-}
 
 .statement-homepage {
     width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
     height: 43vh;
 }
 
@@ -68,59 +261,215 @@
 }
 
 .statement-homepage h2 {
-    font-family: 'Bravest';
     text-transform: uppercase;
-    font-size: 36px
+    font-size: 30px
 }
 
 .statement-homepage p {}
 
-.statement-homepage button {
-    width: 25%;
-    height: 10%;
-    border-radius: 20px;
+button {
+    height:50px;
+    border-radius: 50px;
     background: yellow;
     font-weight: bold;
-    float: right;
     margin-top: 5%;
     border: 0;
-}
-
-.family-photo div {
-    background-image: url(img/PAL-41-of-41.jpg);
-    border-radius: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
-    left: -50%;
-    height: 250px;
-    width: 250px;
-    z-index: 2;
-    margin-top: 120%;
+    z-index: 1;
+	padding: 10px 25px
 }
 
-.family-photo {
-    left: 50%;
-    height: 41vh;
-    position: absolute;
-}
 
 .banner-homepage ul {
-    float:right;
+    position: absolute;
     color: white;
+    top: 0;
     right: 0;
     width: 50%;
 }
 
 .banner-homepage ul li {
     text-transform: uppercase;
-    float:right;
-    padding-right:60px;
-    padding-top:20px;
+    float: right;
+    padding-right: 50px;
+    padding-top: 20px;
     position: relative;
     display: inline-block;
 }
-li {
-    font-family: 'Bravest';
+
+.homepage-middle {
+    width: 100%;
+    height: 115vh;
+    position: relative;
+}
+
+.homepage-middle h2 {
+    width: 80%;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.visit-store {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+	transform: skewY(-2deg);
+	overflow: hidden
+}
+.slanted {
+	position: relative;
+	background: #000
+}
+.slanted img {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+    transition:3s;
+	opacity: .8
+}
+.slanted h2 {
+	color: #fff;
+	left: 20px;
+	margin-bottom: 0px;
+	transform: skewY(2deg);
+}
+.slanted button {
+	transform: skewY(2deg);
+}
+.slantedin {
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+}
+
+.page-transition {
+    width:100vw !important;
+/*    height: 800px !important;*/
+/*    position:relative;*/
+    top:0;
+    left:0;
+}
+.increase {
+    transform: scale(3);
+}
+.upcoming-events {
+    text-align:center;
+    height:85vh;
+    width:100%;
+}
+
+.upcoming-events h1:nth-child(1) {
+    color: #DFDFDF;
+    font-size:90px;
+    width:80%;
+    margin:auto;
+    text-align: center;
+}
+
+.upcoming-events h2 {
+    position:relative;
+    display:inline-block;
+    margin-top:5%;
+    line-height:30px;
+    font-size:20px;
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+
+}
+
+.upcoming-events .date {
+    font-size:80px
+}
+
+
+.events-wrapper {
+    height: 79vh;
+    position:relative;
+}
+
+.flex-row {
+    display:flex;
+}
+
+
+
+ul {
+	padding: 0 0 0 0px
+}
+/*====DIVIDERS====*/
+.divide10 {
+	width: 100%;
+	height: 10px;
+}
+.divide15 {
+	width: 100%;
+	height: 15px;
+}
+.divide20 {
+	width: 100%;
+	height: 20px;
+}
+.divide25 {
+	width: 100%;
+	height: 25px;
+}
+.divide30 {
+	width: 100%;
+	height: 30px;
+}
+.divide35 {
+	width: 100%;
+	height: 35px;
+}
+.divide40 {
+	width: 100%;
+	height: 40px;
+}
+.divide45 {
+	width: 100%;
+	height: 40px;
+}
+.divide50 {
+	width: 100%;
+	height: 50px;
+}
+.divide55 {
+	width: 100%;
+	height: 55px;
+}
+.divide60 {
+	width: 100%;
+	height: 60px;
+}
+.divide65 {
+	width: 100%;
+	height: 65px;
+}
+.divide70 {
+	width: 100%;
+	height: 70px;
+}
+.divide75 {
+	width: 100%;
+	height: 75px;
+}
+.divide80 {
+	width: 100%;
+	height: 80px;
+}
+.divide85 {
+	width: 100%;
+	height: 85px;
+}
+.divide90 {
+	width: 100%;
+	height: 90px;
+}
+.divide100 {
+	width: 100%;
+	height: 100px;
 }
