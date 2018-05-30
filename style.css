@@ -347,13 +347,13 @@ button {
 
 .page-transition {
     width:100vw !important;
-/*    height: 800px !important;*/
-/*    position:relative;*/
+    height: 800px !important;
+    position:relative;
     top:0;
     left:0;
 }
 .increase {
-    transform: scale(3);
+    transform: scale(5);
 }
 .upcoming-events {
     text-align:center;
