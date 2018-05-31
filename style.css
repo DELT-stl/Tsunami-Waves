@@ -338,11 +338,25 @@ button {
 .slanted button {
 	transform: skewY(2deg);
 }
+.slanted p {
+    transform: skewY(2deg);
+    color:white;
+    width:40%;
+    font-size:20px;
+    position:absolute;
+    top:25%;
+    right:10%;
+}
 .slantedin {
 	position: absolute;
+    height:100%;
+    width:100%;
 	top: 50%;
 	left: 20px;
 	transform: translateY(-50%);
+}
+.full img {
+    height:800px;
 }
 
 .page-transition {
