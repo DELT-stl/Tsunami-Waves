@@ -395,6 +395,12 @@ button {
     display:flex;
 }
 
+.center-content * {
+    width:40%;
+    text-align:center;
+    margin:auto;
+}
+
 
 
 ul {
