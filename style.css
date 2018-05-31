@@ -351,64 +351,34 @@ button {
 }
 
 .visit-store * {
-    z-index: 0;
+    z-index: 1;
 }
 
 .visit-store img {
     position: relative;
-    /*    opacity: .99 !important;*/
-        object-fit:cover;
+    object-fit:cover;
     object-position:top;
-    transition: .3s;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
     z-index: 0;
-
-}
-
-.new-bg {
-    position: fixed !important;
-    /*    width:100vw !important;*/
-    /*    height:80vh !important;*/
-    left: 50% !important;
-    transform: translateX(-50%) scale(3) !important;
+    object-fit: cover;
+    opacity: .8
 }
 
 .flex-col {
+    z-index:0;
     width: 33.333333%;
     padding-left: 15px;
     padding-right: 15px;
-    transition: .3s;
-}
-
-.second {
-    z-index: 2;
-}
-
-.col-sm-4 {
-    transition: 3s;
 }
 
 .slanted {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     width:32vw;
     background: #000;
     height: 400px;
-
-    /*    transition:.2s;*/
-}
-.slanted .placeholder {
-    width:32vw;
-    position:relative;
-}
-
-.slanted img {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    object-fit: cover;
-    /*    transition:3s;*/
-    opacity: .8
 }
 
 .slanted .background {
