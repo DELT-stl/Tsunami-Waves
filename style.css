@@ -372,7 +372,7 @@ button {
 }
 
 .flex-col {
-    max-width: 33.333333%;
+    width: 33.333333%;
     padding-left: 15px;
     padding-right: 15px;
     transition: .3s;

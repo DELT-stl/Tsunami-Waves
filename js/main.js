@@ -68,7 +68,7 @@ jQuery(document).ready(function ($) {
             "-webkit-transform": "skew(0deg)",
             "-ms-transform": "skew(0deg)"
         });
-        $(this).append('<div class="placeholder"></div>');
+        $(this).parent().find('.slantedin').append('<div class="placeholder"></div>')
         $(this).parent().css({
             'position': 'absolute',
             left: l,
@@ -77,7 +77,7 @@ jQuery(document).ready(function ($) {
             //            'transform': 'scale(' + scaleX + ')'
         });
         $(this).parent().animate({
-            'left': 0,
+            'left': '0',
             //            'left': '0',
             'top': '-' + distance,
             'height': '80vh',
