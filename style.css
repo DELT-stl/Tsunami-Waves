@@ -357,7 +357,8 @@ button {
 .visit-store img {
     position: relative;
     /*    opacity: .99 !important;*/
-    /*    object-fit:cover;*/
+        object-fit:cover;
+    object-position:top;
     transition: .3s;
     z-index: 0;
 

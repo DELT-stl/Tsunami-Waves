@@ -43,7 +43,7 @@ jQuery(document).ready(function ($) {
         //         $(this).css({'position':'fixed'});
         //         $(this).css({'left':'0'});
         var scrollTop = $(window).scrollTop(),
-            elementOffset = $(this).offset().top,
+            elementOffset = $('.anchor').offset().top,
             distance = (elementOffset - scrollTop);
         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -68,7 +68,6 @@ jQuery(document).ready(function ($) {
             "-webkit-transform": "skew(0deg)",
             "-ms-transform": "skew(0deg)"
         });
-        $(this).parent().find('.slantedin').append('<div class="placeholder"></div>')
         $(this).parent().css({
             'position': 'absolute',
             left: l,
