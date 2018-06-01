@@ -1,6 +1,12 @@
 jQuery(document).ready(function ($) {
     $('.slanted').on('click', function (obj) {
-        var obj = $(this);
+        growTransition($(this));
+    });
+
+
+});
+    function growTransition(obj) {
+        //        var obj = $(this);
         var scroll = $(window).scrollTop(),
             elementOffset = $('.anchor').offset().top,
             distance = (elementOffset - scroll);
@@ -9,7 +15,7 @@ jQuery(document).ready(function ($) {
         //            l = $(this).offset().left;
         //        $('.original-page').html('');
         //        $('html').scrollTop(0);
-        $(this).parent().siblings().animate({
+        obj.parent().siblings().animate({
             'opacity': '0'
         });
         $('.anchor .wrapper').css({
@@ -17,22 +23,22 @@ jQuery(document).ready(function ($) {
             "-webkit-transform": "skew(0deg)",
             "-ms-transform": "skew(0deg)"
         });
-        if ($(this).offset().top < scroll) {
+        if (obj.offset().top < scroll) {
             d = distance * -1;
             $('.anchor').animate({
                 'margin-top': d
             });
         }
-        $(this).find('.slantedin').animate({
+        obj.find('.slantedin').animate({
             'opacity': '0'
         });
-        $(this).css({
+        obj.css({
             'position': 'fixed',
         });
-        $(this).parent().css({
+        obj.parent().css({
             'z-index': '2'
         });
-        $(this).animate({
+        obj.animate({
             'left': '0',
             'top': '-' + distance,
             //            'top':'0',
@@ -45,7 +51,7 @@ jQuery(document).ready(function ($) {
         });
         setTimeout(function () {
             $('.anchor').css({
-                'margin-top':'0'
+                'margin-top': '0'
             });
             obj.css({
                 'position': 'relative',
@@ -72,6 +78,4 @@ jQuery(document).ready(function ($) {
             };
             event.preventDefault();
         }, 1000);
-
-    });
-});
+    }
