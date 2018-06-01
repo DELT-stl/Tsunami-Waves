@@ -1,8 +1,8 @@
 jQuery(document).ready(function ($) {
-    $('.slanted').on('click', function (obj) {
+    $('.slanted').on('click', function () {
         growTransition($(this));
     });
-    $('.main-menu ul li').on('click', function (obj) {
+    $('.main-menu ul li').on('click', function () {
         fadeTransition($(this));
     });
 
@@ -22,11 +22,30 @@ function fadeTransition(obj) {
         'z-index': '3'
     }).animate({
         'width': '100vw',
-    }).animate({
-        'left': '100vw'
+    }, 400, function () {
+        $('.slider-transition').load(href+ ' .slider-transition', function () {
+//            EXECUTES ON CALLBACK
+            $('.fader').animate({
+                'left': '100vw'
+            });
+            pushState(href);
+        });
     });
-    $('.slider-transition').load(href + ' .slider-transition');
-    pushState(href);
+    //    }).siblings('.slider-transition').css({
+    //        'opacity': '0'
+    //    }).load('/mission.html .slider-transition',
+    //        function () {
+    //            $('.fader').animate({
+    //                'left': '100vw'
+    //            });
+    //        $(this).animate({
+    //            'opacity':'1'
+    //        });
+    //            pushState(href);
+    //        }
+    //    );
+    //    .animate({
+    //        'left': '100vw'
 
 }
 
@@ -34,7 +53,6 @@ function pushState(href) {
     history.pushState('', 'New URL: ' + href, href);
     window.onpopstate = function (event) {
         location.reload();
-
     };
     event.preventDefault();
 
@@ -64,22 +82,18 @@ function growTransition(obj) {
             'margin-top': d
         });
     }
-    obj.find('.slantedin').animate({
-        'opacity': '0'
-    });
     obj.css({
-        'position': 'fixed',
-    });
-    obj.parent().css({
-        'z-index': '2'
-    });
-    obj.animate({
+        'position': 'fixed'
+    }).animate({
         'left': '0',
         'top': '-' + distance,
         //            'top':'0',
         'height': '80vh',
         'width': '100vw'
-
+    }).parent().css({
+        'z-index': '2'
+    }).find('.slantedin').animate({
+        'opacity': '0'
     });
     $('#content-div *, .original-page *').animate({
         'opacity': '0'
