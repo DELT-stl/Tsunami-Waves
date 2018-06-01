@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
-    $('.slanted img').on('click', function () {
+    $('.slanted').on('click', function (obj) {
+        var obj = $(this);
         var scroll = $(window).scrollTop(),
             elementOffset = $('.anchor').offset().top,
             distance = (elementOffset - scroll),
@@ -11,22 +12,25 @@ jQuery(document).ready(function ($) {
             scaleY = h / $(this).height();
         //        $('.original-page').html('');
         //        $('html').scrollTop(0);
+        $(this).parent().siblings().animate({
+            'opacity': '0'
+        });
         $('.anchor').css({});
         $('.anchor .wrapper').css({
             "transform": "skew(0deg)",
             "-webkit-transform": "skew(0deg)",
             "-ms-transform": "skew(0deg)"
         });
-        $(this).parent().find('.slantedin').animate({
+        $(this).find('.slantedin').animate({
             'opacity': '0'
         });
-        $(this).parent().css({
+        $(this).css({
             'position': 'absolute',
         });
-        $(this).parent().parent().css({
+        $(this).parent().css({
             'z-index': '2'
         });
-        $(this).parent().animate({
+        $(this).animate({
             'left': '0',
             'top': '-' + distance,
             //            'top':'0',
@@ -46,19 +50,37 @@ jQuery(document).ready(function ($) {
             'opacity': '0'
         });
         setTimeout(function () {
+            obj.parent().siblings().html('').css({
+                'display':'none'
+            });
             $('.anchor .wrapper').css({
                 'position': 'relative'
+            });
+            obj.css({
+                'position':'relative'
+            });
+            obj.parent().css({
+                'padding-left':'0',
+                'padding-right':'0'
             });
             $('.slanted').css({
                 'top': 0
             });
             // Do something after 1 second
             $('.original-page').html('');
-            var href = '/mission.html'
+            //            var href = '/mission.html'
+            var href = obj.data('url');
+
 
             console.log(href);
             //        $('#content-div').html('');
             $('#content-div').load(href + ' #content-div');
+            $('#content-div').css({
+                'opacity': '0'
+            });
+            $('#content-div').animate({
+                'opacity': '1'
+            });
             $('html').scrollTop(0);
             // loads content into a div with the ID content_div
 
@@ -80,11 +102,16 @@ jQuery(document).ready(function ($) {
             //                window.location.href = window.location.href;
             //                location.reload();
             //            };
-            e.preventDefault();
+            event.preventDefault();
 
 
         }, 1000);
 
     });
+
+    function save($obj) {
+        var l = $obj;
+        return $obj;
+    }
 
 });
