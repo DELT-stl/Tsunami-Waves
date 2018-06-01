@@ -2,6 +2,22 @@ jQuery(document).ready(function ($) {
     $('.slanted').on('click', function (obj) {
         growTransition($(this));
     });
+    $('.main-menu ul li').on('click', function(obj) {
+        $('.fader').css({
+            'position':'absolute',
+            'height':'150vh',
+            'width':'0',
+            'left':'0',
+            'top':'0',
+            'color':'black',
+            'background-color':'black',
+            'z-index':'3'
+        }).animate({
+            'width':'100vw',
+        }).animate({
+            'left':'100vw'
+        });
+    });
 
 
 });
