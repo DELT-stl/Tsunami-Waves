@@ -43,6 +43,7 @@ jQuery(document).ready(function ($) {
         console.log(href);
 //        $('#content-div').html('');
     $('#content-div').load(href + ' #content-div');
+        $('html').scrollTop(0);
         // loads content into a div with the ID content_div
 
     // HISTORY.PUSHSTATE
