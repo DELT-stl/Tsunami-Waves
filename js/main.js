@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
     $('.slanted img').on('click', function () {
-        var scroll= $(window).scrollTop(),
+        var scroll = $(window).scrollTop(),
             elementOffset = $('.anchor').offset().top,
             distance = (elementOffset - scroll),
             w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
@@ -9,10 +9,9 @@ jQuery(document).ready(function ($) {
             right = w - l,
             scaleX = w / $(this).width(),
             scaleY = h / $(this).height();
-//        $('.original-page').html('');
-//        $('html').scrollTop(0);
+        //        $('.original-page').html('');
+        //        $('html').scrollTop(0);
         $('.anchor').css({
-//            'position':'fixed'
         });
         $('.visit-store').css({
             "transform": "skew(0deg)",
@@ -20,36 +19,56 @@ jQuery(document).ready(function ($) {
             "-ms-transform": "skew(0deg)"
         });
         $(this).parent().find('.slantedin').animate({
-            'opacity':'0'
+            'opacity': '0'
         });
         $(this).parent().css({
             'position': 'absolute',
         });
         $(this).parent().parent().css({
-            'z-index':'2'
+            'z-index': '2'
         });
         $(this).parent().animate({
             'left': '0',
             'top': '-' + distance,
-//            'top':'0',
+            //            'top':'0',
             'height': '80vh',
             'width': '100vw'
 
         });
-//    var href = $(this).closest('a').attr("href"),
-        $('.original-page').html('');
-        var href = '/mission.html'
+        if ($(this).offset().top < scroll) {
+            $('.visit-store').css({
+                'position': 'absolute'
+            });
+            $('.anchor').animate({
+                'top': '-' + distance
+            });
+        }
+        setTimeout(function () {
+            $('.visit-store').css({
+                'position': 'relative'
+            });
+            $('.slanted').css({
+                'top': 0
+            });
+            // Do something after 1 second
+            $('.original-page').html('');
+            var href = '/mission.html'
 
-        console.log(href);
-//        $('#content-div').html('');
-    $('#content-div').load(href + ' #content-div');
-        $('html').scrollTop(0);
-        // loads content into a div with the ID content_div
+            console.log(href);
+            //        $('#content-div').html('');
+            $('#content-div').load(href + ' #content-div');
+            $('html').scrollTop(0);
+            // loads content into a div with the ID content_div
 
-    // HISTORY.PUSHSTATE
-    history.pushState('', 'New URL: '+href, href);
-    e.preventDefault();
+            // HISTORY.PUSHSTATE
+            history.pushState('', 'New URL: ' + href, href);
+            window.onpopstate = function (event) {
+                location.reload();
+            };
+            e.preventDefault();
 
+
+        }, 1000);
 
     });
 
