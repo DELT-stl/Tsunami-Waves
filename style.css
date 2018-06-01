@@ -340,7 +340,7 @@ button {
     margin-right: auto;
 }
 
-.visit-store {
+.anchor .wrapper{
     width: 100%;
     position: relative;
     transform: skewY(-2deg);
@@ -350,11 +350,11 @@ button {
     overflow: visible;
 }
 
-.visit-store * {
+.anchor .wrapper * {
     z-index: 1;
 }
 
-.visit-store img {
+.anchor .wrapper img {
     position: relative;
     object-fit:cover;
     object-position:top;

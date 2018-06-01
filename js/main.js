@@ -11,9 +11,8 @@ jQuery(document).ready(function ($) {
             scaleY = h / $(this).height();
         //        $('.original-page').html('');
         //        $('html').scrollTop(0);
-        $('.anchor').css({
-        });
-        $('.visit-store').css({
+        $('.anchor').css({});
+        $('.anchor .wrapper').css({
             "transform": "skew(0deg)",
             "-webkit-transform": "skew(0deg)",
             "-ms-transform": "skew(0deg)"
@@ -36,15 +35,18 @@ jQuery(document).ready(function ($) {
 
         });
         if ($(this).offset().top < scroll) {
-            $('.visit-store').css({
+            $('.anchor .wrapper').css({
                 'position': 'absolute'
             });
             $('.anchor').animate({
                 'top': '-' + distance
             });
         }
+        $('#content-div *, .original-page *').animate({
+            'opacity': '0'
+        });
         setTimeout(function () {
-            $('.visit-store').css({
+            $('.anchor .wrapper').css({
                 'position': 'relative'
             });
             $('.slanted').css({
@@ -65,6 +67,19 @@ jQuery(document).ready(function ($) {
             window.onpopstate = function (event) {
                 location.reload();
             };
+            //            response.headers['Vary'] = 'Accept';
+            //            window.onpopstate = function (event) {
+            //                alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+            //                            location.reload();
+            //                        response.headers['Vary'] = 'Accept';
+            //            };
+
+            //            $(window).bind('popstate', function () {
+
+            //            window.onpopstate = function (event) {
+            //                window.location.href = window.location.href;
+            //                location.reload();
+            //            };
             e.preventDefault();
 
 
