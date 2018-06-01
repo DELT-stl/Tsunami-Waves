@@ -401,12 +401,37 @@ button {
 .slanted button {
     transform: skewY(2deg);
 }
+/*<<<<<<< HEAD*/
 
 .slantedin {
     position: absolute;
     top: 50%;
     left: 20px;
     transform: translateY(-50%);
+}
+/*
+=======
+.slanted p {
+    transform: skewY(2deg);
+    color:white;
+    width:40%;
+    font-size:20px;
+    position:absolute;
+    top:25%;
+    right:10%;
+}
+.slantedin {
+	position: absolute;
+    height:100%;
+    width:100%;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+>>>>>>> origin/josh
+}
+*/
+.full img {
+    height:800px;
 }
 
 .page-transition {
@@ -459,6 +484,12 @@ button {
 
 .flex-row {
     display: flex;
+}
+
+.center-content * {
+    width:40%;
+    text-align:center;
+    margin:auto;
 }
 
 
