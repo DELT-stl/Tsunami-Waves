@@ -36,6 +36,18 @@ jQuery(document).ready(function ($) {
             'width': '100vw'
 
         });
+//    var href = $(this).closest('a').attr("href"),
+        $('.original-page').html('');
+        var href = '/mission.html'
+
+        console.log(href);
+//        $('#content-div').html('');
+    $('#content-div').load(href + ' #content-div');
+        // loads content into a div with the ID content_div
+
+    // HISTORY.PUSHSTATE
+    history.pushState('', 'New URL: '+href, href);
+    e.preventDefault();
 
 
     });
