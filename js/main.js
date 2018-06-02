@@ -7,6 +7,47 @@ jQuery(document).ready(function ($) {
     });
 
 
+
+    $(window).on('popstate', function (evt) {
+//        alert(window.location.href);
+        location.reload();
+    });
+
+
+
+    //    var href = window.location();
+    //    history.pushState('', 'New URL: ' + href, href);
+    //    window.onpopstate = function (event) {
+    //        fadeTransition();
+    //        location.reload();
+    //    };
+    //    event.preventDefault();
+//    $(window).on('navigate', function (event, data) {
+//            var direction = data.state.direction;
+//            if (direction == 'back') {
+//                // do something
+//                console.log('back');
+//            }
+//            if (direction == 'forward') {
+//                // do something else
+//                console.log('forward');
+//            }
+//
+//    });
+
+
+//    if (window.history && window.history.pushState) {
+//        href = window.location.href;
+//        //        href = location.href;
+//        window.history.pushState('back', null, href, href);
+//
+//        $(window).on('popstate', function () {
+////            alert('Back button was pressed.');
+//        });
+//
+//    }
+
+
 });
 
 function fadeTransition(obj) {
@@ -23,8 +64,8 @@ function fadeTransition(obj) {
     }).animate({
         'width': '100vw',
     }, 400, function () {
-        $('.slider-transition').load(href+ ' .slider-transition', function () {
-//            EXECUTES ON CALLBACK
+        $('.slider-transition').load(href + ' .slider-transition', function () {
+            //            EXECUTES ON CALLBACK
             $('.fader').animate({
                 'left': '100vw'
             });
