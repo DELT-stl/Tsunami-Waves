@@ -3,55 +3,21 @@ jQuery(document).ready(function ($) {
         growTransition($(this));
     });
     $('.main-menu ul li').on('click', function () {
-        fadeTransition($(this));
+        fadeTransition($(this).data('url'));
+        href = window.location.href;
+        pushState(href);
     });
-
-
 
     $(window).on('popstate', function (evt) {
-//        alert(window.location.href);
-        location.reload();
+        fadeTransition();
+        //        href=window.location.href;
+        //    history.pushState('', 'New URL: ' + href, href);
+        //        location.reload();
     });
+}); // ready jquery
 
+function fadeTransition(href = window.location.href) {
 
-
-    //    var href = window.location();
-    //    history.pushState('', 'New URL: ' + href, href);
-    //    window.onpopstate = function (event) {
-    //        fadeTransition();
-    //        location.reload();
-    //    };
-    //    event.preventDefault();
-//    $(window).on('navigate', function (event, data) {
-//            var direction = data.state.direction;
-//            if (direction == 'back') {
-//                // do something
-//                console.log('back');
-//            }
-//            if (direction == 'forward') {
-//                // do something else
-//                console.log('forward');
-//            }
-//
-//    });
-
-
-//    if (window.history && window.history.pushState) {
-//        href = window.location.href;
-//        //        href = location.href;
-//        window.history.pushState('back', null, href, href);
-//
-//        $(window).on('popstate', function () {
-////            alert('Back button was pressed.');
-//        });
-//
-//    }
-
-
-});
-
-function fadeTransition(obj) {
-    var href = obj.data('url');
     $('.fader').css({
         'position': 'absolute',
         'height': '150vh',
@@ -69,25 +35,21 @@ function fadeTransition(obj) {
             $('.fader').animate({
                 'left': '100vw'
             });
-            pushState(href);
+            //            pushState(href);
+
+            //            putting this here in callback
+            $('.slanted').on('click', function () {
+                growTransition($(this));
+            });
+            $('.main-menu ul li').on('click', function () {
+                fadeTransition($(this).data('url'));
+                href = window.location.href;
+                pushState(href);
+            });
+//            here
+
         });
     });
-    //    }).siblings('.slider-transition').css({
-    //        'opacity': '0'
-    //    }).load('/mission.html .slider-transition',
-    //        function () {
-    //            $('.fader').animate({
-    //                'left': '100vw'
-    //            });
-    //        $(this).animate({
-    //            'opacity':'1'
-    //        });
-    //            pushState(href);
-    //        }
-    //    );
-    //    .animate({
-    //        'left': '100vw'
-
 }
 
 function pushState(href) {
@@ -95,20 +57,14 @@ function pushState(href) {
     window.onpopstate = function (event) {
         location.reload();
     };
-    event.preventDefault();
+    //    event.preventDefault();
 
 }
 
 function growTransition(obj) {
-    //        var obj = $(this);
     var scroll = $(window).scrollTop(),
         elementOffset = $('.anchor').offset().top,
         distance = (elementOffset - scroll);
-    //            w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-    //            h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
-    //            l = $(this).offset().left;
-    //        $('.original-page').html('');
-    //        $('html').scrollTop(0);
     obj.parent().siblings().animate({
         'opacity': '0'
     });
@@ -124,11 +80,10 @@ function growTransition(obj) {
         });
     }
     obj.css({
-        'position': 'fixed'
+        'position': 'absolute'
     }).animate({
         'left': '0',
         'top': '-' + distance,
-        //            'top':'0',
         'height': '80vh',
         'width': '100vw'
     }).parent().css({
