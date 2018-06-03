@@ -1,20 +1,50 @@
 jQuery(document).ready(function ($) {
-    $('.slanted').on('click', function () {
-        growTransition($(this));
-    });
-    $('.main-menu ul li').on('click', function () {
-        fadeTransition($(this).data('url'));
-        href = window.location.href;
-        pushState(href);
-    });
-
     $(window).on('popstate', function (evt) {
+
+        //        history.pushState('', 'New URL: ' + href, href);
         fadeTransition();
         //        href=window.location.href;
         //    history.pushState('', 'New URL: ' + href, href);
         //        location.reload();
     });
+    //    $('.slanted').unbind('click', function () {
+    //        initClicky();
+    //    });
+    //    $('.main-menu ul li').unbind('click', function () {
+    //        initClicky();
+    //    });
+    //    initClicky();
+    //    $(document).on('click', '.slanted', );
+    //    var fade = function (event) {
+    //        fadeTransition();
+    //    };
+    //    $(document).on('click', '.main-menu ul li', fade));
+    var fade = function (event) {
+        fadeTransition($(this).data('url'));
+    };
+    $('.main-menu ul li').on('click', fade);
+    var grow = function (event) {
+        growTransition($(this));
+    };
+    $('.slanted').on('click', grow);
+    //        href = window.location.href;
+    //        pushState(href);
+
 }); // ready jquery
+function initClicky() {
+    //    $('.slanted').on('click', function () {
+    //        growTransition($(this));
+    //    });
+    //    $('.main-menu ul li').on('click', function () {
+    //        fadeTransition($(this).data('url'));
+    //    });
+
+    var grow = function (event) {
+        growTransition($(this));
+    };
+    $('.slanted').on('click', grow);
+
+}
 
 function fadeTransition(href = window.location.href) {
 
@@ -35,18 +65,25 @@ function fadeTransition(href = window.location.href) {
             $('.fader').animate({
                 'left': '100vw'
             });
-            //            pushState(href);
+//            $('.slider-transition').children().filter("video").each(function () {
+//                this.pause(); // can't hurt
+//                delete this; // @sparkey reports that this did the trick (even though it makes no sense!)
+//                $(this).remove(); // this is probably what actually does the trick
+//            });
+            //            $('.slider-transition').empty();
+            pushState(href);
 
             //            putting this here in callback
-            $('.slanted').on('click', function () {
-                growTransition($(this));
-            });
-            $('.main-menu ul li').on('click', function () {
-                fadeTransition($(this).data('url'));
-                href = window.location.href;
-                pushState(href);
-            });
-//            here
+            //            $('.slanted').on('click', function () {
+            //                growTransition($(this));
+            //            });
+            //            $('.main-menu ul li').on('click', function () {
+            //                fadeTransition($(this).data('url'));
+            //                href = window.location.href;
+            //                pushState(href);
+            //            });
+            //            here
+            initClicky();
 
         });
     });
@@ -56,8 +93,14 @@ function pushState(href) {
     history.pushState('', 'New URL: ' + href, href);
     window.onpopstate = function (event) {
         location.reload();
+        event.preventDefault();
     };
-    //    event.preventDefault();
+    $('.slanted').unbind('click', function () {
+        initClicky();
+    });
+    $('.main-menu ul li').unbind('click', function () {
+        initClicky();
+    });
 
 }
 
@@ -118,6 +161,7 @@ function growTransition(obj) {
         $('html').scrollTop(0);
         // HISTORY.PUSHSTATE
         pushState(href);
+        initClicky();
 
     }, 1000);
 }
