@@ -58,7 +58,7 @@ function pushState(href) {
     //    initClicky();
 }
 
-function growTransition(obj) {
+function growTransition(obj, href = window.location.href) {
     var scroll = $(window).scrollTop(),
         elementOffset = $('.anchor').offset().top,
         distance = (elementOffset - scroll);
@@ -106,12 +106,13 @@ function growTransition(obj) {
 //        $('.original-content').remove();
 //        $(this).parents('.anchor').siblings().not('#content-div').remove();
         obj.parents('.anchor').siblings().not('#content-div').remove();
-        var href = obj.find('a').attr('href');
-        console.log(href);
+//        var href = obj.find('a').attr('href');
+        alert(href);
         $('#content-div').css({
+//        $('.slider-transition').css({
             'opacity': '0'
-//        }).load(href + ' #content-div').animate({
         }).load(href + ' #content-div').animate({
+//        }).load(href + ' .slider-transition').animate({
             'opacity': '1'
         }, 400, function () {
             //            initClicky();
@@ -122,10 +123,10 @@ function growTransition(obj) {
 }
 
 function fadeTransition(href = window.location.href) {
-
+var h = $(document).height();
     $('.fader').css({
-        'position': 'absolute',
-        'height': '150vh',
+        'position': 'fixed',
+        'height': h,
         'width': '0',
         'left': '0',
         'top': '0',
