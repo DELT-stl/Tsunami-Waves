@@ -104,6 +104,13 @@ h2,
 li {
     font-family: 'Bravest';
 }
+ul li a {
+    color:white;
+}
+ul li a:hover {
+    color:white;
+    text-decoration: none;
+}
 
 .container {
     width: 80vw !important;

@@ -1,18 +1,54 @@
 jQuery(document).ready(function ($) {
-    $(window).on('popstate', function (evt) {
-        fadeTransition();
-    });
-    var fade = function (event) {
-        fadeTransition($(this).data('url'));
-    };
-    $('.main-menu ul li').on('click', fade);
-    initClicky();
+    if (Modernizr.history) {
+        initClicky();
+        $('.slanted').on('click', function() {
+            growTransition($(this));
+        });
+        $(window).bind("popstate", function () {
+            link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
+            fadeTransition(link);
+        });
+        //        alert('supported');
+        $("li").on("click", "a", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var _href = $(this).attr("href");
+            //            alert(_href);
+            //            alert('clicked');
+
+            // change the url without a page refresh and add a history entry.
+            history.pushState(null, null, _href);
+            fadeTransition(_href);
+        });
+    } else {
+
+    }
+
+    // load the content
+    //                        loadContent(_href);
+
+    //    $(window).on('popstate', function (evt) {
+    //        fadeTransition();
+    //    });
+    //    var fade = function (event) {
+    //        fadeTransition($(this).data('url'));
+    //    };
+    //    $('.main-menu ul li').on('click', fade);
+    //    initClicky();
 }); // ready jquery
+
+
 function initClicky() {
-    var grow = function (event) {
+//    var grow = function (event) {
+//        growTransition($(this));
+//    };
+//    $('.slanted').on('click', grow);
+//    $('.slanted').on('click', growTransition())
+    $('.slanted').on('click', function (){
         growTransition($(this));
-    };
-    $('.slanted').on('click', grow);
+    });
+
 
 }
 
@@ -35,7 +71,8 @@ function fadeTransition(href = window.location.href) {
             $('.fader').animate({
                 'left': '100vw'
             });
-            pushState(href);
+            //            pushState(href);
+        initClicky();
 
         });
     });
@@ -45,9 +82,9 @@ function pushState(href) {
     history.pushState('', 'New URL: ' + href, href);
     window.onpopstate = function (event) {
         location.reload();
-        event.preventDefault();
+//        event.preventDefault();
     };
-    initClicky();
+//    initClicky();
 }
 
 function growTransition(obj) {
