@@ -1,14 +1,17 @@
 jQuery(document).ready(function ($) {
     if (Modernizr.history) {
-        initClicky();
-        $('.slanted').on('click', function() {
-            growTransition($(this));
+//        initClicky();
+        $('.slanted').on('click', 'a', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            _href = $(this).attr('href');
+            history.pushState(null, null, _href);
+            growTransition($(this).closest('.slanted'));
         });
         $(window).bind("popstate", function () {
             link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
             fadeTransition(link);
         });
-        //        alert('supported');
         $("li").on("click", "a", function (event) {
             event.preventDefault();
             event.stopPropagation();
@@ -21,60 +24,26 @@ jQuery(document).ready(function ($) {
             history.pushState(null, null, _href);
             fadeTransition(_href);
         });
-    } else {
-
-    }
-
-    // load the content
-    //                        loadContent(_href);
-
-    //    $(window).on('popstate', function (evt) {
-    //        fadeTransition();
-    //    });
-    //    var fade = function (event) {
-    //        fadeTransition($(this).data('url'));
-    //    };
-    //    $('.main-menu ul li').on('click', fade);
-    //    initClicky();
+    } else {}
 }); // ready jquery
-
-
 function initClicky() {
-//    var grow = function (event) {
-//        growTransition($(this));
-//    };
-//    $('.slanted').on('click', grow);
-//    $('.slanted').on('click', growTransition())
-    $('.slanted').on('click', function (){
-        growTransition($(this));
-    });
-
-
-}
-
-function fadeTransition(href = window.location.href) {
-
-    $('.fader').css({
-        'position': 'absolute',
-        'height': '150vh',
-        'width': '0',
-        'left': '0',
-        'top': '0',
-        'color': 'black',
-        'background-color': 'black',
-        'z-index': '3'
-    }).animate({
-        'width': '100vw',
-    }, 400, function () {
-        $('.slider-transition').load(href + ' .slider-transition', function () {
-            //            EXECUTES ON CALLBACK
-            $('.fader').animate({
-                'left': '100vw'
-            });
-            //            pushState(href);
-        initClicky();
-
-        });
+    //    var grow = function (event) {
+    //        growTransition($(this));
+    //    };
+    //    $('.slanted').on('click', grow);
+    //    $('.slanted').on('click', growTransition())
+    //    $('.slanted').on('click', function () {
+    //        growTransition($(this).parent().parent().parent());
+    //    });
+    var grow = function (event) {
+        growTransition($(this).closest('.slanted'));
+        alert('hello');
+    };
+    $('.slanted').on('click', 'a', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        history.pushState(null, null, _href);
+        grow();
     });
 }
 
@@ -82,9 +51,9 @@ function pushState(href) {
     history.pushState('', 'New URL: ' + href, href);
     window.onpopstate = function (event) {
         location.reload();
-//        event.preventDefault();
+                event.preventDefault();
     };
-//    initClicky();
+    //    initClicky();
 }
 
 function growTransition(obj) {
@@ -133,14 +102,41 @@ function growTransition(obj) {
             'display': 'none'
         });
         $('.original-content').html('');
-        var href = obj.data('url');
+        var href = obj.find('a').attr('href');
         console.log(href);
         $('#content-div').css({
             'opacity': '0'
         }).load(href + ' #content-div').animate({
             'opacity': '1'
+        }, 400, function() {
+            initClicky();
         });
         $('html').scrollTop(0);
-        pushState(href);
+//                pushState(href);
     }, 1000);
+}
+
+function fadeTransition(href = window.location.href) {
+
+    $('.fader').css({
+        'position': 'absolute',
+        'height': '150vh',
+        'width': '0',
+        'left': '0',
+        'top': '0',
+        'color': 'black',
+        'background-color': 'black',
+        'z-index': '3'
+    }).animate({
+        'width': '100vw',
+    }, 400, function () {
+        $('.slider-transition').load(href + ' .slider-transition', function () {
+            //            EXECUTES ON CALLBACK
+            $('.fader').animate({
+                'left': '100vw'
+            });
+            //            pushState(href);
+            initClicky();
+        });
+    });
 }
