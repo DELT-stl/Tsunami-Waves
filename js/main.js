@@ -56,6 +56,8 @@ function growTransition(obj) {
         distance = (elementOffset - scroll);
     obj.parent().siblings().animate({
         'opacity': '0'
+    }).closest('.anchor').siblings().animate({
+        'opacity': '0'
     });
     $('.anchor .wrapper').css({
         "transform": "skew(0deg)",
@@ -78,9 +80,6 @@ function growTransition(obj) {
     }).parent().css({
         'z-index': '2'
     }).find('.slantedin').animate({
-        'opacity': '0'
-    });
-    $('#content-div *, .original-page *').animate({
         'opacity': '0'
     });
     setTimeout(function () {
