@@ -1,58 +1,60 @@
 jQuery(document).ready(function ($) {
+    console.log('document ready');
     if (Modernizr.history) {
-//        initClicky();
-        $('.slanted').on('click', 'a', function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            _href = $(this).attr('href');
-            history.pushState(null, null, _href);
-            growTransition($(this).closest('.slanted'));
-        });
         $(window).bind("popstate", function () {
             link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
+            alert(link);
             fadeTransition(link);
         });
-        $("li").on("click", "a", function (event) {
+        $('body').on('click', 'a', function(event) {
             event.preventDefault();
             event.stopPropagation();
-
+        })
+        $("li").on("click", "a", function (event) {
             var _href = $(this).attr("href");
-            //            alert(_href);
-            //            alert('clicked');
-
-            // change the url without a page refresh and add a history entry.
             history.pushState(null, null, _href);
             fadeTransition(_href);
+        });
+        $('body').on('click', 'button a', function () {
+            _href = $(this).attr('href');
+            //        alert('grow variable');
+            console.log('grow variable');
+            history.pushState(null, null, _href);
+            growTransition($(this).closest('.slanted'));
         });
     } else {}
 }); // ready jquery
 function initClicky() {
-    //    var grow = function (event) {
-    //        growTransition($(this));
-    //    };
-    //    $('.slanted').on('click', grow);
-    //    $('.slanted').on('click', growTransition())
-    //    $('.slanted').on('click', function () {
+    if (typeof grow == 'undefined') {
+        var grow = function (event) {
+            //        growTransition($(this).closest('.slanted'));
+            //        alert('hello');
+            event.preventDefault();
+            event.stopPropagation();
+            _href = $(this).attr('href');
+            //        alert('grow variable');
+            console.log('grow variable');
+            history.pushState(null, null, _href);
+            growTransition($(this).parent().parent().parent());
+        };
+    }
+    $('.slanted').on('click', 'a', grow);
+    //    $('.slanted').on('click', 'a', function (event) {
+    //        event.preventDefault();
+    //        event.stopPropagation();
+    //        _href = $(this).attr('href');
+    //        history.pushState(null, null, _href);
     //        growTransition($(this).parent().parent().parent());
+    ////        grow();
     //    });
-    var grow = function (event) {
-        growTransition($(this).closest('.slanted'));
-        alert('hello');
-    };
-    $('.slanted').on('click', 'a', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        history.pushState(null, null, _href);
-        grow();
-    });
 }
 
 function pushState(href) {
-    history.pushState('', 'New URL: ' + href, href);
-    window.onpopstate = function (event) {
-        location.reload();
-                event.preventDefault();
-    };
+    //    history.pushState('', 'New URL: ' + href, href);
+    //    window.onpopstate = function (event) {
+    //        location.reload();
+    //        event.preventDefault();
+    //    };
     //    initClicky();
 }
 
@@ -101,18 +103,21 @@ function growTransition(obj) {
         }).siblings().html('').css({
             'display': 'none'
         });
-        $('.original-content').html('');
+//        $('.original-content').remove();
+//        $(this).parents('.anchor').siblings().not('#content-div').remove();
+        obj.parents('.anchor').siblings().not('#content-div').remove();
         var href = obj.find('a').attr('href');
         console.log(href);
         $('#content-div').css({
             'opacity': '0'
+//        }).load(href + ' #content-div').animate({
         }).load(href + ' #content-div').animate({
             'opacity': '1'
-        }, 400, function() {
-            initClicky();
+        }, 400, function () {
+            //            initClicky();
         });
         $('html').scrollTop(0);
-//                pushState(href);
+        //                pushState(href);
     }, 1000);
 }
 
@@ -136,7 +141,7 @@ function fadeTransition(href = window.location.href) {
                 'left': '100vw'
             });
             //            pushState(href);
-            initClicky();
+            //            initClicky();
         });
     });
 }
