@@ -574,6 +574,59 @@ button {
     color: #ddd;
 }
 
+.events-one {
+    height:50vh;
+    padding-top:15vh;
+}
+.events-one .row {
+    margin-top:5vh
+}
+
+.events-one h2 {
+    color:red;
+}
+.events-one p {
+    font-size:20px;
+}
+
+.events-one h2, .events-one p {
+    width:70%;
+    margin:auto;
+}
+.events-one button {
+    display:block;
+    margin:auto;
+}
+
+.events-one img {
+    width:500px;
+    height:500px;
+}
+.events-one .col-sm-4 p {
+    position:relative;
+    text-align: center;
+    bottom:-105%;
+    width:40%;
+}
+
+.events-two{
+    padding-top:35%;
+    position:relative;
+    height:40vh;
+}
+.events-two h4 {
+    position:absolute;
+    top:20%;
+    width:100%;
+}
+.events-two .col-sm-4 h4{
+    position:absolute;
+    width:100%;
+    top:100%;
+    margin-top:2vh;
+    text-align: center;
+    color:red;
+}
 
 ul {
     padding: 0 0 0 0px
