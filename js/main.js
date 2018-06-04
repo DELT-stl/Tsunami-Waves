@@ -3,10 +3,10 @@ jQuery(document).ready(function ($) {
     if (Modernizr.history) {
         $(window).bind("popstate", function () {
             link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
-            alert(link);
+            //            alert(link);
             fadeTransition(link);
         });
-        $('body').on('click', 'a', function(event) {
+        $('body').on('click', 'a', function (event) {
             event.preventDefault();
             event.stopPropagation();
         })
@@ -103,16 +103,16 @@ function growTransition(obj, href = window.location.href) {
         }).siblings().html('').css({
             'display': 'none'
         });
-//        $('.original-content').remove();
-//        $(this).parents('.anchor').siblings().not('#content-div').remove();
+        //        $('.original-content').remove();
+        //        $(this).parents('.anchor').siblings().not('#content-div').remove();
         obj.parents('.anchor').siblings().not('#content-div').remove();
-//        var href = obj.find('a').attr('href');
-        alert(href);
+        //        var href = obj.find('a').attr('href');
+        //        alert(href);
         $('#content-div').css({
-//        $('.slider-transition').css({
+            //        $('.slider-transition').css({
             'opacity': '0'
         }).load(href + ' #content-div').animate({
-//        }).load(href + ' .slider-transition').animate({
+            //        }).load(href + ' .slider-transition').animate({
             'opacity': '1'
         }, 400, function () {
             //            initClicky();
@@ -123,7 +123,10 @@ function growTransition(obj, href = window.location.href) {
 }
 
 function fadeTransition(href = window.location.href) {
-var h = $(document).height();
+//    var scroll = $(window).scrollTop();
+//            $("html").scrollTop(scroll);
+    // yada
+    var h = $(document).height();
     $('.fader').css({
         'position': 'fixed',
         'height': h,
