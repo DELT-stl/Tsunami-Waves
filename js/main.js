@@ -111,7 +111,9 @@ function growTransition(obj, href = window.location.href) {
         $('#content-div').css({
             //        $('.slider-transition').css({
             'opacity': '0'
-        }).load(href + ' #content-div').animate({
+        }).load(href + ' #content-div', function() {
+            $(this).addClass('slider-transition');
+        }).animate({
             //        }).load(href + ' .slider-transition').animate({
             'opacity': '1'
         }, 400, function () {
