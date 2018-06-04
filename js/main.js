@@ -130,9 +130,9 @@ function fadeTransition(href = window.location.href) {
     // yada
 //    var h = $(document).height();
     $('.fader').css({
-        'position': 'absolute',
+        'position': 'fixed',
 //        'height': h,
-                'height': '50vh',
+                'height': '100vh',
         'width': '0',
         'left': '0',
         'top': '0',
