@@ -111,7 +111,7 @@ function growTransition(obj, href = window.location.href) {
         $('#content-div').css({
             //        $('.slider-transition').css({
             'opacity': '0'
-        }).load(href + ' #content-div', function() {
+        }).load(href + ' #content-div', function () {
             $(this).addClass('slider-transition');
         }).animate({
             //        }).load(href + ' .slider-transition').animate({
@@ -125,13 +125,14 @@ function growTransition(obj, href = window.location.href) {
 }
 
 function fadeTransition(href = window.location.href) {
-//    var scroll = $(window).scrollTop();
-//            $("html").scrollTop(scroll);
+    //    var scroll = $(window).scrollTop();
+    //            $("html").scrollTop(scroll);
     // yada
-    var h = $(document).height();
+//    var h = $(document).height();
     $('.fader').css({
-        'position': 'fixed',
-        'height': h,
+        'position': 'absolute',
+//        'height': h,
+                'height': '50vh',
         'width': '0',
         'left': '0',
         'top': '0',
@@ -143,6 +144,7 @@ function fadeTransition(href = window.location.href) {
     }, 400, function () {
         $('.slider-transition').load(href + ' .slider-transition', function () {
             //            EXECUTES ON CALLBACK
+//            h = $(document).height();
             $('.fader').animate({
                 'left': '100vw'
             });
