@@ -623,9 +623,27 @@ button {
     position:absolute;
     width:100%;
     top:100%;
-    margin-top:2vh;
+    margin-top:4vh;
     text-align: center;
     color:red;
+}
+.item-one {
+    position:relative;
+    height:90vh;
+    margin-top:20vh;
+}
+.item-one .col-sm-6 *{
+    width:100%;
+}
+.logo {
+    display:block;
+    object-fit: contain;
+    position:absolute;
+    top:-85%;
+    z-index:5;
+    width:130px;
+
+    margin:auto;
 }
 
 ul {
