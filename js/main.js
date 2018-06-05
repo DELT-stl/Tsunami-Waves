@@ -20,16 +20,16 @@ jQuery(document).ready(function ($) {
             //        alert('grow variable');
             console.log('grow variable');
             history.pushState(null, null, _href);
-//            growTransition($(this).closest('.slanted'));
+            //            growTransition($(this).closest('.slanted'));
             growTransition($(this).closest('.img-container'));
         });
-//        $('body').on('click', '.events-two a', function () {
-//            _href = $(this).attr('href');
-//            //        alert('grow variable');
-//            console.log('grow variable');
-//            history.pushState(null, null, _href);
-//            growTransition($(this).children('.img-container'));
-//        });
+        //        $('body').on('click', '.events-two a', function () {
+        //            _href = $(this).attr('href');
+        //            //        alert('grow variable');
+        //            console.log('grow variable');
+        //            history.pushState(null, null, _href);
+        //            growTransition($(this).children('.img-container'));
+        //        });
         $('body').on('click', 'a.grow', function () {
             _href = $(this).attr('href');
             history.pushState(null, null, _href);
@@ -92,31 +92,70 @@ function growTransition(obj, href = window.location.href) {
         });
         obj.closest('.bomb-shelter').siblings().not('.insert').remove();
         obj.closest('.bomb-shelter').css({
-            'padding-top':'0'
+            'padding-top': '0'
         });
         obj.parents('.content-div').siblings().remove();
-            $('.banner-missionpage').remove();
+        $('.banner-missionpage').remove();
         $('.insert').css({
             'opacity': '0'
         }).load(href + ' .content-div', function () {
             $('.banner-missionpage').css({
-                'display':'none'
+                'display': 'none'
             }).remove();
             obj.closest('.flex-col').css({
-                'padding-left':'0',
-                'padding-right':'0'
+                'padding-left': '0',
+                'padding-right': '0'
 
             }).closest('.flex-col').siblings().remove();
         }).animate({
             'opacity': '1'
-        }, 400, function () {
-        });
+        }, 400, function () {});
         $('html').scrollTop(0);
     }, 1000);
 }
+
 function growTwo(obj, href = window.location.href) {
-    $(obj).find('img').animate({
-        'width':'100vw'
+    //    $(obj).find('img').animate({
+    //        'width':'100vw'
+    //    });
+    var scroll = $(window).scrollTop(),
+        elementOffset = $('.anchor').offset().top,
+        distance = (elementOffset - scroll),
+        img = obj.find('img');
+    var d = distance;
+    if (obj.offset().top < scroll) {
+        d = distance * -1;
+        $('.anchor').animate({
+            'margin-top': d
+        });
+    }
+//    $('.slider-transition').children(':not(.anchor)').animate({
+//        'opacity':'0'
+//    });
+    var h = $(document).height;
+    $('.fader').css({
+        'position':'fixed',
+        'height': '100vh',
+        'width':'100vw',
+        'left':'0',
+        'background-color':'white',
+        'opacity':'0',
+        'z-index':'1'
+    }).animate({
+        'opacity':'1'
+    });
+
+    img.css({
+        'position': 'absolute',
+        'z-index': '5',
+        'transform': 'translateX(0%)'
+    }).animate({
+        'border-radius': '0',
+        //        'transform': 'translateX(0%)',
+        'left': '0',
+        'top': '-' + distance,
+        'height': '80vh',
+        'width': '100vw'
     });
 
 }
