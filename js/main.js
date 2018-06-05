@@ -20,50 +20,19 @@ jQuery(document).ready(function ($) {
             //        alert('grow variable');
             console.log('grow variable');
             history.pushState(null, null, _href);
-            growTransition($(this).closest('.slanted'));
+//            growTransition($(this).closest('.slanted'));
+            growTransition($(this).closest('.img-container'));
         });
         $('body').on('click', '.events-two a', function () {
             _href = $(this).attr('href');
             //        alert('grow variable');
             console.log('grow variable');
             history.pushState(null, null, _href);
-            growTransition($(this).find('.round-container'));
+            growTransition($(this).children('.img-container'));
         });
     } else {}
 }); // ready jquery
-function initClicky() {
-    if (typeof grow == 'undefined') {
-        var grow = function (event) {
-            //        growTransition($(this).closest('.slanted'));
-            //        alert('hello');
-            event.preventDefault();
-            event.stopPropagation();
-            _href = $(this).attr('href');
-            //        alert('grow variable');
-            console.log('grow variable');
-            history.pushState(null, null, _href);
-            growTransition($(this).parent().parent().parent());
-        };
-    }
-    $('.slanted').on('click', 'a', grow);
-    //    $('.slanted').on('click', 'a', function (event) {
-    //        event.preventDefault();
-    //        event.stopPropagation();
-    //        _href = $(this).attr('href');
-    //        history.pushState(null, null, _href);
-    //        growTransition($(this).parent().parent().parent());
-    ////        grow();
-    //    });
-}
 
-function pushState(href) {
-    //    history.pushState('', 'New URL: ' + href, href);
-    //    window.onpopstate = function (event) {
-    //        location.reload();
-    //        event.preventDefault();
-    //    };
-    //    initClicky();
-}
 
 function growTransition(obj, href = window.location.href) {
     var scroll = $(window).scrollTop(),
@@ -115,16 +84,27 @@ function growTransition(obj, href = window.location.href) {
         }).siblings().html('').css({
             'display': 'none'
         });
-        obj.parents('.anchor').siblings().not('.content-div').remove();
+        $('.col-sm-4').css({
+                'padding-left':'0',
+                'padding-right':'0'
+            });
+        obj.closest('.bomb-shelter').siblings().not('.insert').remove();
+        obj.closest('.bomb-shelter').css({
+            'padding-top':'0'
+        });
+        obj.parents('.content-div').siblings().remove();
+            $('.banner-missionpage').remove();
 //        $('.nuke').siblings().not('#content-div"'
 
         //        var href = obj.find('a').attr('href');
         //        alert(href);
-        $('.content-div').css({
+        $('.insert').css({
             //        $('.slider-transition').css({
             'opacity': '0'
         }).load(href + ' .content-div', function () {
-            $(this).addClass('slider-transition');
+            $('.banner-missionpage').css({
+                'display':'none'
+            }).remove();
         }).animate({
             //        }).load(href + ' .slider-transition').animate({
             'opacity': '1'
@@ -137,10 +117,6 @@ function growTransition(obj, href = window.location.href) {
 }
 
 function fadeTransition(href = window.location.href) {
-    //    var scroll = $(window).scrollTop();
-    //            $("html").scrollTop(scroll);
-    // yada
-    //    var h = $(document).height();
     $('.fader').css({
         'position': 'fixed',
         //        'height': h,

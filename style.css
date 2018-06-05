@@ -379,103 +379,6 @@ button {
     margin-right: auto;
 }
 
-.anchor .wrapper {
-    width: 100%;
-    position: relative;
-    transform: skewY(-2deg);
-    -webkit-transition: -webkit-transform .5s;
-    -ms-transition: -ms-transform .5s;
-    transition: transform .5s;
-    overflow: visible;
-}
-
-.anchor .wrapper * {
-    z-index: 1;
-}
-
-.anchor .wrapper img {
-    position: relative;
-    object-fit: cover;
-    object-position: top;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    object-fit: cover;
-    opacity: .8
-}
-
-.flex-col {
-    z-index: 0;
-    width: 33.333333%;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.slanted {
-    position: relative;
-    z-index: 0;
-    width: 32vw;
-    background: #000;
-    height: 400px;
-}
-
-.slanted .background {
-    width: 33.333333333%;
-    height: 100%;
-    position: relative;
-    background-image: url(img/Baseball-Photo.jpg);
-    z-index: 0;
-    opacity: .8;
-
-}
-
-.slanted h2 {
-    color: #fff;
-    left: 20px;
-    margin-bottom: 0px;
-    transform: skewY(2deg);
-}
-
-.slanted button {
-    transform: skewY(2deg);
-}
-
-/*<<<<<<< HEAD*/
-
-.slantedin {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-}
-
-/*
-=======
-.slanted p {
-    transform: skewY(2deg);
-    color:white;
-    width:40%;
-    font-size:20px;
-    position:absolute;
-    top:25%;
-    right:10%;
-}
-*/
-
-/*
-.slantedin {
-	position: absolute;
-    height:100%;
-    width:100%;
-	top: 50%;
-	left: 20px;
-	transform: translateY(-50%);
-*/
-
-/*
->>>>>>> origin/josh
-*/
 
 .full-slant {
     -webkit-clip-path: polygon(0 26%, 100% 10%, 100% 74%, 0 90%);
@@ -555,9 +458,7 @@ button {
     position: relative;
 }
 
-.flex-row {
-    display: flex;
-}
+
 
 .center-content * {
     width: 40%;
@@ -641,26 +542,7 @@ button {
     width: 40%;
 }
 
-.events-two {
-    padding-top: 35%;
-    position: relative;
-    height: 40vh;
-}
 
-.events-two h4 {
-    position: absolute;
-    top: 20%;
-    width: 100%;
-}
-
-.events-two .col-sm-4 h4 {
-    position: absolute;
-    width: 100%;
-    top: 100%;
-    margin-top: 4vh;
-    text-align: center;
-    color: red;
-}
 
 .item-one {
     position: relative;
@@ -801,4 +683,100 @@ ul {
 .divide100 {
     width: 100%;
     height: 100px;
+}
+
+.flex-row {
+    display: flex;
+/*    width:100%;*/
+}
+.flex-col {
+    z-index: 2;
+    width: 33.333333%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.anchor .wrapper {
+    width: 100%;
+    position: relative;
+    transform: skewY(-2deg);
+    -webkit-transition: -webkit-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s;
+    overflow: visible;
+}
+
+.anchor .wrapper * {
+    z-index: 1;
+}
+
+.anchor .wrapper img {
+    position: relative;
+    object-fit: cover;
+    object-position: top;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+    opacity: .8
+}
+
+.slanted {
+    position: relative;
+    z-index: 0;
+    width: 32vw;
+    background: #000;
+    height: 400px;
+}
+
+.slanted .background {
+    width: 33.333333333%;
+    height: 100%;
+    position: relative;
+    background-image: url(img/Baseball-Photo.jpg);
+    z-index: 0;
+    opacity: .8;
+
+}
+
+.slanted h2 {
+    color: #fff;
+    left: 20px;
+    margin-bottom: 0px;
+    transform: skewY(2deg);
+}
+
+.slanted button {
+    transform: skewY(2deg);
+}
+/*index*/
+/*anchor, wrapper, flex-row, flex-col, slanted/img-container, img, slantedin, button, a*/
+
+.slantedin {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+/*events*/
+/*events-two, anchor, flex row, col-sm-4, a, img-container, cround*/
+.events-two {
+    padding-top: 35%;
+    position: relative;
+    height: 40vh;
+}
+
+.events-two h4 {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+}
+
+.events-two .col-sm-4 h4 {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    margin-top: 4vh;
+    text-align: center;
+    color: red;
 }
