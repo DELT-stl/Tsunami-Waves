@@ -23,12 +23,18 @@ jQuery(document).ready(function ($) {
 //            growTransition($(this).closest('.slanted'));
             growTransition($(this).closest('.img-container'));
         });
-        $('body').on('click', '.events-two a', function () {
+//        $('body').on('click', '.events-two a', function () {
+//            _href = $(this).attr('href');
+//            //        alert('grow variable');
+//            console.log('grow variable');
+//            history.pushState(null, null, _href);
+//            growTransition($(this).children('.img-container'));
+//        });
+        $('body').on('click', 'a.grow', function () {
             _href = $(this).attr('href');
-            //        alert('grow variable');
-            console.log('grow variable');
             history.pushState(null, null, _href);
-            growTransition($(this).children('.img-container'));
+            growTwo($(this))
+
         });
     } else {}
 }); // ready jquery
@@ -107,6 +113,12 @@ function growTransition(obj, href = window.location.href) {
         });
         $('html').scrollTop(0);
     }, 1000);
+}
+function growTwo(obj, href = window.location.href) {
+    $(obj).find('img').animate({
+        'width':'100vw'
+    });
+
 }
 
 function fadeTransition(href = window.location.href) {
