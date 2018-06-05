@@ -171,17 +171,30 @@ ul li a:hover {
     object-fit: cover;
 }
 
+.inline {
+    display: inline-block;
+        position: relative;
+    z-index: 0;
+    width: 32vw;
+    background: #000;
+    height: 400px;
+    /*    width:100%;*/
+}
+
 .round-container {
-    position: absolute;
-    left: 50%;
+    /*    position:relative;*/
+    /*    left: 50%;*/
     -webkit-transition: -webkit-transform .5s;
     -ms-transition: -ms-transform .5s;
     transition: transform .5s;
+/*    background:transparent;*/
     border-radius: 100%;
     margin: auto;
     overflow: hidden;
     height: 350px;
     width: 350px;
+
+
 }
 
 .round1 {
@@ -194,6 +207,10 @@ ul li a:hover {
 .round1height {
     height: 600px;
     margin-bottom: 75px
+}
+a {
+    width:100%;
+/*    width:33vw;*/
 }
 
 /*====MENU====*/
@@ -687,15 +704,20 @@ ul {
 
 .flex-row {
     display: flex;
-/*    width:100%;*/
+/*        width:100%;*/
 }
+
 .flex-col {
     z-index: 2;
     width: 33.333333%;
     padding-left: 15px;
     padding-right: 15px;
 }
-.anchor .wrapper {
+.anchor {
+    position:relative;
+}
+
+.anchor .skew {
     width: 100%;
     position: relative;
     transform: skewY(-2deg);
@@ -709,7 +731,7 @@ ul {
     z-index: 1;
 }
 
-.anchor .wrapper img {
+.anchor .skew img {
     position: relative;
     object-fit: cover;
     object-position: top;
@@ -749,7 +771,9 @@ ul {
 .slanted button {
     transform: skewY(2deg);
 }
+
 /*index*/
+
 /*anchor, wrapper, flex-row, flex-col, slanted/img-container, img, slantedin, button, a*/
 
 .slantedin {
@@ -758,12 +782,20 @@ ul {
     left: 20px;
     transform: translateY(-50%);
 }
+
 /*events*/
+
 /*events-two, anchor, flex row, col-sm-4, a, img-container, cround*/
+
 .events-two {
-    padding-top: 35%;
-    position: relative;
-    height: 40vh;
+    /*    padding-top: 35%;*/
+/*    position: relative;*/
+    /*    height: 40vh;*/
+    /*    width:100%;*/
+}
+
+.flex-col {
+    /*    display:inline-block;*/
 }
 
 .events-two h4 {

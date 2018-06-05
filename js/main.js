@@ -84,35 +84,28 @@ function growTransition(obj, href = window.location.href) {
         }).siblings().html('').css({
             'display': 'none'
         });
-        $('.col-sm-4').css({
-                'padding-left':'0',
-                'padding-right':'0'
-            });
         obj.closest('.bomb-shelter').siblings().not('.insert').remove();
         obj.closest('.bomb-shelter').css({
             'padding-top':'0'
         });
         obj.parents('.content-div').siblings().remove();
             $('.banner-missionpage').remove();
-//        $('.nuke').siblings().not('#content-div"'
-
-        //        var href = obj.find('a').attr('href');
-        //        alert(href);
         $('.insert').css({
-            //        $('.slider-transition').css({
             'opacity': '0'
         }).load(href + ' .content-div', function () {
             $('.banner-missionpage').css({
                 'display':'none'
             }).remove();
+            obj.css({
+                'padding-left':'0',
+                'padding-right':'0'
+
+            }).closest('.flex-col').siblings().remove();
         }).animate({
-            //        }).load(href + ' .slider-transition').animate({
             'opacity': '1'
         }, 400, function () {
-            //            initClicky();
         });
         $('html').scrollTop(0);
-        //                pushState(href);
     }, 1000);
 }
 
