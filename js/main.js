@@ -115,15 +115,15 @@ function growTransition(obj, href = window.location.href) {
         }).siblings().html('').css({
             'display': 'none'
         });
-        obj.parents('.anchor').siblings().not('#content-div').remove();
+        obj.parents('.anchor').siblings().not('.content-div').remove();
 //        $('.nuke').siblings().not('#content-div"'
 
         //        var href = obj.find('a').attr('href');
         //        alert(href);
-        $('#content-div').css({
+        $('.content-div').css({
             //        $('.slider-transition').css({
             'opacity': '0'
-        }).load(href + ' #content-div', function () {
+        }).load(href + ' .content-div', function () {
             $(this).addClass('slider-transition');
         }).animate({
             //        }).load(href + ' .slider-transition').animate({
