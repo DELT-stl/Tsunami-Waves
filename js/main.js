@@ -22,6 +22,13 @@ jQuery(document).ready(function ($) {
             history.pushState(null, null, _href);
             growTransition($(this).closest('.slanted'));
         });
+        $('body').on('click', '.events-two a', function () {
+            _href = $(this).attr('href');
+            //        alert('grow variable');
+            console.log('grow variable');
+            history.pushState(null, null, _href);
+            growTransition($(this).find('.round-container'));
+        });
     } else {}
 }); // ready jquery
 function initClicky() {
@@ -79,8 +86,11 @@ function growTransition(obj, href = window.location.href) {
         });
     }
     obj.css({
-        'position': 'absolute'
+        'position': 'absolute',
+        'transform': 'translateX(0%)'
     }).animate({
+        'border-radius': '0',
+        //        'transform': 'translateX(0%)',
         'left': '0',
         'top': '-' + distance,
         'height': '80vh',
@@ -96,16 +106,18 @@ function growTransition(obj, href = window.location.href) {
         });
         obj.css({
             'position': 'relative',
+            'margin-left': '0',
+            'margin-right': '0',
             'top': '0'
         }).parent().css({
             'padding-left': '0',
-            'padding-right': '0'
+            'padding-right': '0',
         }).siblings().html('').css({
             'display': 'none'
         });
-        //        $('.original-content').remove();
-        //        $(this).parents('.anchor').siblings().not('#content-div').remove();
         obj.parents('.anchor').siblings().not('#content-div').remove();
+//        $('.nuke').siblings().not('#content-div"'
+
         //        var href = obj.find('a').attr('href');
         //        alert(href);
         $('#content-div').css({
@@ -128,11 +140,11 @@ function fadeTransition(href = window.location.href) {
     //    var scroll = $(window).scrollTop();
     //            $("html").scrollTop(scroll);
     // yada
-//    var h = $(document).height();
+    //    var h = $(document).height();
     $('.fader').css({
         'position': 'fixed',
-//        'height': h,
-                'height': '100vh',
+        //        'height': h,
+        'height': '100vh',
         'width': '0',
         'left': '0',
         'top': '0',
@@ -144,7 +156,7 @@ function fadeTransition(href = window.location.href) {
     }, 400, function () {
         $('.slider-transition').load(href + ' .slider-transition', function () {
             //            EXECUTES ON CALLBACK
-//            h = $(document).height();
+            //            h = $(document).height();
             $('.fader').animate({
                 'left': '100vw'
             });
