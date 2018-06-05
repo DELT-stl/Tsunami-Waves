@@ -96,7 +96,7 @@ function growTransition(obj, href = window.location.href) {
             $('.banner-missionpage').css({
                 'display':'none'
             }).remove();
-            obj.css({
+            obj.closest('.flex-col').css({
                 'padding-left':'0',
                 'padding-right':'0'
 

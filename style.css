@@ -27,6 +27,11 @@ body {
     text-align: center
 }
 
+.cround {
+/*    transition:2s;*/
+/*    position:absolute;*/
+/*    width:100vw !important;*/
+}
 body {
     overflow-x: hidden;
     font-size: 17px;
@@ -766,6 +771,9 @@ ul {
     left: 20px;
     margin-bottom: 0px;
     transform: skewY(2deg);
+}
+.img-container {
+    position:relative;
 }
 
 .slanted button {
