@@ -132,19 +132,12 @@ function growTwo(obj, href = window.location.href) {
     }
     $anchor.unwrap();
     var h = $(document).height;
-    //    $('.fader').css({
-    //        'position': 'fixed',
-    //        'height': '1vh',
-    //        'width': '100vw',
-    //        'left': '0',
-    //        'background-color': 'white',
-    //        'opacity': '0',
-    //        'z-index': '1'
-    //    }).animate({
-    //        'opacity': '1'
-    //    }, 400, function () {
     $('.slider-transition').children().not($anchor).animate({
         'opacity': '0'
+    }, 400, function() {
+        $(this).remove();
+        $('html').scrollTop(0);
+        $('<div class="insert"></div>').insertAfter('.anchor');
     });
     //    }); part of fader
     $img.css({
@@ -161,7 +154,11 @@ function growTwo(obj, href = window.location.href) {
     }).closest('.link-wrapper').siblings().animate({
         'opacity': '0'
     }, 400, function () {
-        //        $(this).siblings().remove();
+        $img.css({
+            'top':'0',
+            'position':'relative'
+        });
+        $('.insert').load(href + ' .content-div');
     });
 
 }
