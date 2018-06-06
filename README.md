@@ -1,10 +1,5 @@
 #Tsunami-Waves
-Fonts:
-Brushed font on top image: DK Magical (in folder)
-Heading font: Bravest Font (in folder)
-Body Font: Hind 400
+Has a really neat image transition effect (see main.js), the objective would be to make this effect able to apply to any image, regardless of its container, css properties, etc. Right now I'm trying to make the same function applicable to both the three images on the index and the circular ones in testfile.html. The series of events for the grow transition is 
+user clicks image (or encapsulated link inside parent that image shares) > current page (aside from image) is animated to opacity 0 then removed > content from destination page is loaded under current image > image from previous page is now full screen, becomes banner of next page so scrolltop(0) gives this illusion
 
-
-Colors:
-Yellow - #f7ef09
-Red - #f70909
+There's also the fader effect which is fairly simple and doesn't need too much improvement, as far as I know.
