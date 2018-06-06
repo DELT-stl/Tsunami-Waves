@@ -23,13 +23,7 @@ jQuery(document).ready(function ($) {
             //            growTransition($(this).closest('.slanted'));
             growTransition($(this).closest('.img-container'));
         });
-        //        $('body').on('click', '.events-two a', function () {
-        //            _href = $(this).attr('href');
-        //            //        alert('grow variable');
-        //            console.log('grow variable');
-        //            history.pushState(null, null, _href);
-        //            growTransition($(this).children('.img-container'));
-        //        });
+
         $('body').on('click', 'a.grow', function () {
             _href = $(this).attr('href');
             history.pushState(null, null, _href);
@@ -115,50 +109,64 @@ function growTransition(obj, href = window.location.href) {
 }
 
 function growTwo(obj, href = window.location.href) {
-    //    $(obj).find('img').animate({
-    //        'width':'100vw'
-    //    });
-    var scroll = $(window).scrollTop(),
-        elementOffset = $('.anchor').offset().top,
+    var $anchor = obj.parents('.anchor'),
+        scroll = $(window).scrollTop(),
+        elementOffset = $anchor.offset().top,
         distance = (elementOffset - scroll),
         $img = obj.find('img'),
-        $anchor = obj.parents('.anchor'),
+        $wrapper = obj.closest('.link-wrapper'),
         inverseDistance = distance * -1;
     if (obj.offset().top < scroll) {
         d = distance * -1;
         $anchor.animate({
-            'margin-top': distance
+            'margin-top': d
         });
     }
     $anchor.unwrap();
-    var h = $(document).height;
+    $wrapper.css({
+        "transform": "skew(0deg)",
+        "-webkit-transform": "skew(0deg)",
+        "-ms-transform": "skew(0deg)"
+    });
     $('.slider-transition').children().not($anchor).animate({
         'opacity': '0'
-    }, 400, function() {
+    }, 400, function () {
         $(this).remove();
-        $('html').scrollTop(0);
-        $('<div class="insert"></div>').insertAfter('.anchor');
     });
-    //    }); part of fader
+    obj.children().not($img).animate({
+        'opacity': '0'
+    }, 400, function () {
+        $(this).remove();
+    });
     $img.css({
+        'left': '50%;',
         'position': 'absolute',
         'z-index': '5',
-        'transform': 'translateX(0%)'
     }).animate({
         'border-radius': '0',
-        //        'transform': 'translateX(0%)',
         'left': '0',
         'top': '-' + distance,
         'height': '80vh',
         'width': '100vw'
+    }, 400, function () {
+        $img.unwrap();
+        $wrapper.siblings().remove();
+        $wrapper.css({
+            'padding-left': '0',
+            'padding-right': '0',
+            'margin-left': '0',
+            'margin-right': '0'
+        });
+        $('html').scrollTop(0);
+        $('<div class="insert"></div>').insertAfter($anchor);
+        $('.insert').load(href + ' .content-div');
     }).closest('.link-wrapper').siblings().animate({
         'opacity': '0'
     }, 400, function () {
         $img.css({
-            'top':'0',
-            'position':'relative'
+            'top': '0',
+            'position': 'relative'
         });
-        $('.insert').load(href + ' .content-div');
     });
 
 }

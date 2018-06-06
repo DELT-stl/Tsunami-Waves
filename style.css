@@ -187,22 +187,22 @@ ul li a:hover {
 }
 
 .round-container img {
-    /*    position:relative;*/
-    /*    left: 50%;*/
+    display:block;
     -webkit-transition: -webkit-transform .5s;
     -ms-transition: -ms-transform .5s;
     transition: transform .5s;
-/*    background:transparent;*/
     z-index:5;
     border-radius: 100%;
-/*    margin: auto;*/
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     overflow: hidden;
     height: 350px;
     width: 350px;
-
-
+}
+.flex-col {
+    flex-grow:1;
+}
+.round-container {
+    display:block;
 }
 
 .round1 {
@@ -613,6 +613,14 @@ button {
 
     margin: auto;
 }
+a {
+/*
+    position:absolute;
+    height:100%;
+    width:100%;
+    z-index:10;
+*/
+}
 
 ul {
     padding: 0 0 0 0px
@@ -798,6 +806,15 @@ ul {
 
 /*events-two, anchor, flex row, col-sm-4, a, img-container, cround*/
 
+.events-two img {
+/*    left:50%;*/
+/*
+    left:50%;
+    transform: translateX(-50%);
+*/
+}
+.events-two .flex-row {
+}
 
 .events-two h4 {
     position: absolute;
