@@ -121,31 +121,33 @@ function growTwo(obj, href = window.location.href) {
     var scroll = $(window).scrollTop(),
         elementOffset = $('.anchor').offset().top,
         distance = (elementOffset - scroll),
-        img = obj.find('img');
-    var d = distance;
+        $img = obj.find('img'),
+        $anchor = obj.parents('.anchor'),
+        inverseDistance = distance * -1;
     if (obj.offset().top < scroll) {
         d = distance * -1;
-        $('.anchor').animate({
-            'margin-top': d
+        $anchor.animate({
+            'margin-top': distance
         });
     }
-//    $('.slider-transition').children(':not(.anchor)').animate({
-//        'opacity':'0'
-//    });
+    $anchor.unwrap();
     var h = $(document).height;
-    $('.fader').css({
-        'position':'fixed',
-        'height': '100vh',
-        'width':'100vw',
-        'left':'0',
-        'background-color':'white',
-        'opacity':'0',
-        'z-index':'1'
-    }).animate({
-        'opacity':'1'
+    //    $('.fader').css({
+    //        'position': 'fixed',
+    //        'height': '1vh',
+    //        'width': '100vw',
+    //        'left': '0',
+    //        'background-color': 'white',
+    //        'opacity': '0',
+    //        'z-index': '1'
+    //    }).animate({
+    //        'opacity': '1'
+    //    }, 400, function () {
+    $('.slider-transition').children().not($anchor).animate({
+        'opacity': '0'
     });
-
-    img.css({
+    //    }); part of fader
+    $img.css({
         'position': 'absolute',
         'z-index': '5',
         'transform': 'translateX(0%)'
@@ -156,6 +158,10 @@ function growTwo(obj, href = window.location.href) {
         'top': '-' + distance,
         'height': '80vh',
         'width': '100vw'
+    }).closest('.link-wrapper').siblings().animate({
+        'opacity': '0'
+    }, 400, function () {
+        //        $(this).siblings().remove();
     });
 
 }
@@ -179,6 +185,8 @@ function fadeTransition(href = window.location.href) {
             //            h = $(document).height();
             $('.fader').animate({
                 'left': '100vw'
+            }, 400, function () {
+                $('.slider-transition').children('.slider-transition').unwrap();
             });
             //            pushState(href);
             //            initClicky();
