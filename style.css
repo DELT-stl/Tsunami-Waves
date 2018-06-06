@@ -27,11 +27,7 @@ body {
     text-align: center
 }
 
-.cround {
-/*    transition:2s;*/
-/*    position:absolute;*/
-/*    width:100vw !important;*/
-}
+
 body {
     overflow-x: hidden;
     font-size: 17px;
@@ -171,8 +167,11 @@ ul li a:hover {
 }
 
 .cround {
-    width: 100%;
-    height: 100%;
+    border-radius:100%;
+    width:350px;
+    height:350px;
+    display:block;
+    margin:auto;
     object-fit: cover;
 }
 
@@ -720,6 +719,9 @@ ul {
 
 .flex-row {
     display: flex;
+    -webkit-transition: -webkit-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s;
 /*        width:100%;*/
 }
 
@@ -733,7 +735,7 @@ ul {
     position:relative;
 }
 
-.anchor .skew {
+.skew {
     width: 100%;
     position: relative;
     transform: skewY(-2deg);
@@ -793,7 +795,6 @@ ul {
 
 /*index*/
 
-/*anchor, wrapper, flex-row, flex-col, slanted/img-container, img, slantedin, button, a*/
 
 .slantedin {
     position: absolute;
@@ -804,7 +805,6 @@ ul {
 
 /*events*/
 
-/*events-two, anchor, flex row, col-sm-4, a, img-container, cround*/
 
 .events-two img {
 /*    left:50%;*/

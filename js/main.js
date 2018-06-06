@@ -15,14 +15,14 @@ jQuery(document).ready(function ($) {
             history.pushState(null, null, _href);
             fadeTransition(_href);
         });
-        $('body').on('click', 'button a', function () {
-            _href = $(this).attr('href');
-            //        alert('grow variable');
-            console.log('grow variable');
-            history.pushState(null, null, _href);
-            //            growTransition($(this).closest('.slanted'));
-            growTransition($(this).closest('.img-container'));
-        });
+//        $('body').on('click', 'button a', function () {
+//            _href = $(this).attr('href');
+//            //        alert('grow variable');
+//            console.log('grow variable');
+//            history.pushState(null, null, _href);
+//            //            growTransition($(this).closest('.slanted'));
+//            growTransition($(this).closest('.img-container'));
+//        });
 
         $('body').on('click', 'a.grow', function () {
             _href = $(this).attr('href');
@@ -84,8 +84,8 @@ function growTransition(obj, href = window.location.href) {
         }).siblings().html('').css({
             'display': 'none'
         });
-        obj.closest('.bomb-shelter').siblings().not('.insert').remove();
-        obj.closest('.bomb-shelter').css({
+        obj.closest('.anchor').siblings().not('.insert').remove();
+        obj.closest('.anchor').css({
             'padding-top': '0'
         });
         obj.parents('.content-div').siblings().remove();
@@ -114,7 +114,7 @@ function growTwo(obj, href = window.location.href) {
         elementOffset = $anchor.offset().top,
         distance = (elementOffset - scroll),
         $img = obj.find('img'),
-        $wrapper = obj.closest('.link-wrapper'),
+        $wrapper = obj.closest('.wrapper'),
         inverseDistance = distance * -1;
     if (obj.offset().top < scroll) {
         d = distance * -1;
@@ -122,12 +122,8 @@ function growTwo(obj, href = window.location.href) {
             'margin-top': d
         });
     }
+
     $anchor.unwrap();
-    $wrapper.css({
-        "transform": "skew(0deg)",
-        "-webkit-transform": "skew(0deg)",
-        "-ms-transform": "skew(0deg)"
-    });
     $('.slider-transition').children().not($anchor).animate({
         'opacity': '0'
     }, 400, function () {
@@ -138,8 +134,19 @@ function growTwo(obj, href = window.location.href) {
     }, 400, function () {
         $(this).remove();
     });
+    //    $wrapper.css({
+    //        'position': 'absolute',
+    //        'z-index': '5',
+    //    }).animate({
+    //        'border-radius': '0',
+    //        'left': '0',
+    //        'top': '-' + distance,
+    //        'height': '80vh',
+    //        'width': '100vw'
+    //    }, 400, function () {
+    //        $wrapper.siblings().remove();
+    //    });
     $img.css({
-        'left': '50%;',
         'position': 'absolute',
         'z-index': '5',
     }).animate({
@@ -150,6 +157,12 @@ function growTwo(obj, href = window.location.href) {
         'width': '100vw'
     }, 400, function () {
         $img.unwrap();
+        $img.css({
+            'position': 'relative',
+            'margin-left': '0',
+            'margin-right': '0',
+            'top': '0'
+        }).parents().removeClass('.skew');
         $wrapper.siblings().remove();
         $wrapper.css({
             'padding-left': '0',
