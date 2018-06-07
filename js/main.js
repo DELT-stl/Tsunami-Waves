@@ -70,6 +70,12 @@ function growTwo(obj, href = window.location.href) {
     //    }, 400, function () {
     //        $wrapper.siblings().remove();
     //    });
+    $wrapper.animate({
+        'padding-left': '0',
+        'padding-right': '0',
+        'margin-left': '0',
+        'margin-right': '0'
+    });
     $img.css({
         'position': 'absolute',
         'z-index': '5',
@@ -82,18 +88,15 @@ function growTwo(obj, href = window.location.href) {
     }, 400, function () {
         $img.unwrap();
         $img.css({
+            'padding-left': '0',
+            'padding-right': '0',
             'position': 'relative',
             'margin-left': '0',
             'margin-right': '0',
             'top': '0'
         }).parents().removeClass('.skew');
         $wrapper.siblings().remove();
-        $wrapper.css({
-            'padding-left': '0',
-            'padding-right': '0',
-            'margin-left': '0',
-            'margin-right': '0'
-        });
+
         $('html').scrollTop(0);
         $('<div class="insert"></div>').insertAfter($anchor);
         $('.insert').load(href + ' .content-div');
