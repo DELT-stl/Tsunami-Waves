@@ -201,6 +201,7 @@ function fadeTransition(href = window.location.href) {
     }, 400, function () {
         $('.slider-transition').load(href + ' .slider-transition', function () {
             //            EXECUTES ON CALLBACK
+            $('.slider-transition').children('.slider-transition').unwrap();
             //            h = $(document).height();
             $('.fader').animate({
                 'left': '100vw'
