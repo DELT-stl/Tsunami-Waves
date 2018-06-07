@@ -168,15 +168,6 @@ ul li a:hover {
     border-radius: 100%;
 }
 
-.cround {
-    border-radius:100%;
-    width:350px;
-    height:350px;
-    display:block;
-    margin:auto;
-    object-fit: cover;
-    transition:.3s;
-}
 
 .inline {
     display: inline-block;
@@ -559,6 +550,7 @@ button {
 	width: 100%;
 	text-align: center
 }
+
 .eventname {
 	position: absolute;
 	width: 100%;
@@ -846,6 +838,19 @@ footer img {
     color: #bbb;
     text-transform: uppercase
 }
+.cround {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+/*    bottom:0;*/
+    border-radius:100%;
+    width:350px;
+    height:350px;
+    display:block;
+    object-fit: cover;
+    transition:.3s;
+}
+
 /*====DIVIDERS====*/
 
 .divide10 {
@@ -943,7 +948,6 @@ footer img {
     -webkit-transition: -webkit-transform .5s;
     -ms-transition: -ms-transform .5s;
     transition: transform .5s;
-/*        width:100%;*/
 }
 
 .flex-col {

@@ -36,6 +36,14 @@ function growEvents(obj, href = window.location.href) {
         distance = (elementOffset - scroll),
         $img = obj.find('img'),
         $wrapper = obj.closest('.wrapper'),
+        //        event image
+        //        pos abs
+        //        width 600
+        //    height 600
+        //    bottom 0
+        //    z-index 5
+        //    right 10%
+        //
         inverseDistance = distance * -1;
     if (obj.offset().top < scroll) {
         d = distance * -1;
@@ -44,34 +52,87 @@ function growEvents(obj, href = window.location.href) {
         });
     }
     $anchor.unwrap();
+    for (i = 0; i < 4; i++) {
+        $img.unwrap();
+    }
     $('.slider-transition').children().not($anchor).animate({
         'opacity': '0'
     }, 400, function () {
         $(this).remove();
-        $img.removeClass('cround').addClass('event-img');
-    });
-    obj.children().not($img).animate({
-        'opacity': '0'
-    }, 400, function () {
-        $(this).remove();
-    });
-    $wrapper.animate({
-        'padding-left': '0',
-        'padding-right': '0',
-        'margin-left': '0',
-        'margin-right': '0'
-    }, 400, function () {
-        $wrapper.siblings().remove();
-        $('html').scrollTop(0);
-        for (i = 0; i < 4; i++) {
-            $img.unwrap();
-        }
-    });
+        //        $img.removeClass('cround').addClass('event-img');
+        $('<div class="insert"></div>').insertAfter($anchor);
+        $('.insert').load(href + ' .content-div', function () {
+            $(this).css({
+                'opacity': '0'
+            }).animate({
+                'opacity': '1'
+            });
 
-    $('<div class="insert"></div>').insertAfter($anchor);
-    $('.insert').load(href + ' .content-div', function () {
-
+        });
     });
+    var imgTop = $img.offset().top,
+        imgLeft = $img.offset().left;
+
+    $img.css({
+        'position': 'fixed',
+        'top': imgTop,
+        'left': imgLeft
+    }).animate({
+
+    })
+    //    //    $img.css({
+    //    //        'position':'absolute',
+    //    //        'z-index':'5'
+    //    //    }).animate({
+    //    //        'width':'600px',
+    //    //        'height':'600px',
+    //    //        'bottom':'0',
+    //    //        'right':'10%'
+    //    //    });
+    //    $('.slider-transition').children().not($anchor).animate({
+    //        'opacity': '0'
+    //    }, 400, function () {
+    //        $(this).remove();
+    //        //        $img.removeClass('cround').addClass('event-img');
+    //        $('<div class="insert"></div>').insertAfter($anchor);
+    //        $('.insert').load(href + ' .content-div', function () {
+    //            $(this).css({
+    //                'opacity': '0'
+    //            }).animate({
+    //                'opacity': '1'
+    //            });
+    //
+    //        });
+    //    });
+    //    obj.children().not($img).animate({
+    //        'opacity': '0'
+    //    }, 400, function () {
+    //        $(this).remove();
+    //    });
+    //    $wrapper.animate({
+    //        'padding-left': '0',
+    //        'padding-right': '0',
+    //        'margin-left': '0',
+    //        'margin-right': '0'
+    //    }, 400, function () {
+    //        $wrapper.siblings().remove();
+    //        $img.css({
+    //            'position': 'fixed',
+    //            'z-index': '5'
+    //        }).animate({
+    //            'width': '600px',
+    //            'height': '600px',
+    //            'bottom': '0',
+    //            'right': '10%'
+    //        });
+    //        $('html').scrollTop(0);
+    //        for (i = 0; i < 4; i++) {
+    //            $img.unwrap();
+    //        }
+    //
+    //    });
+
+
 }
 
 function growTwo(obj, href = window.location.href) {
