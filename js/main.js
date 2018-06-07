@@ -17,18 +17,13 @@ jQuery(document).ready(function ($) {
         });
         $('body').on('click', 'button a', function () {
             _href = $(this).attr('href');
-            //        alert('grow variable');
-            console.log('grow variable');
             history.pushState(null, null, _href);
-            //            growTransition($(this).closest('.slanted'));
             growTransition($(this).closest('.img-container'));
         });
-        $('body').on('click', '.events-two a', function () {
+        $('body').on('click', 'a.grow', function () {
             _href = $(this).attr('href');
-            //        alert('grow variable');
-            console.log('grow variable');
             history.pushState(null, null, _href);
-            growTransition($(this).children('.img-container'));
+            growTwo($(this));
         });
     } else {}
 }); // ready jquery
@@ -46,7 +41,6 @@ function growTwo(obj, href = window.location.href) {
             'margin-top': d
         });
     }
-
     $anchor.unwrap();
     $('.slider-transition').children().not($anchor).animate({
         'opacity': '0'
@@ -58,18 +52,6 @@ function growTwo(obj, href = window.location.href) {
     }, 400, function () {
         $(this).remove();
     });
-    //    $wrapper.css({
-    //        'position': 'absolute',
-    //        'z-index': '5',
-    //    }).animate({
-    //        'border-radius': '0',
-    //        'left': '0',
-    //        'top': '-' + distance,
-    //        'height': '80vh',
-    //        'width': '100vw'
-    //    }, 400, function () {
-    //        $wrapper.siblings().remove();
-    //    });
     $wrapper.animate({
         'padding-left': '0',
         'padding-right': '0',
