@@ -62,44 +62,16 @@ function growEvents(obj, href = window.location.href) {
         'margin-right': '0'
     }, 400, function () {
         $wrapper.siblings().remove();
+        $('html').scrollTop(0);
         for (i = 0; i < 4; i++) {
             $img.unwrap();
         }
     });
-    //    $img.css({
-    //        'position': 'absolute',
-    //        'z-index': '5',
-    //    }).animate({
-    //        'border-radius': '0',
-    //        'left': '0',
-    //        'top': '-' + distance,
-    //        'height': '80vh',
-    //        'width': '100vw'
-    //    }, 400, function () {
-    //        $img.unwrap();
-    //        $img.css({
-    //            'padding-left': '0',
-    //            'padding-right': '0',
-    //            'position': 'relative',
-    //            'margin-left': '0',
-    //            'margin-right': '0',
-    //            'top': '0'
-    //        }).parents().removeClass('.skew');
-    //        $wrapper.siblings().remove();
 
-    $('html').scrollTop(0);
     $('<div class="insert"></div>').insertAfter($anchor);
-    $('.insert').load(href + ' .content-div');
-    //    }).closest('.link-wrapper').siblings().animate({
-    //        'opacity': '0'
-    //    }, 400, function () {
-    //        $img.css({
-    //            'top': '0',
-    //            'position': 'relative'
-    //        });
-    //    });
+    $('.insert').load(href + ' .content-div', function () {
 
-
+    });
 }
 
 function growTwo(obj, href = window.location.href) {
