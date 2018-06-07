@@ -31,37 +31,69 @@ jQuery(document).ready(function ($) {
 }); // ready jquery
 function growEvents(obj, href = window.location.href) {
     var $anchor = obj.parents('.anchor'),
-        scroll = $(window).scrollTop(),
-        elementOffset = $anchor.offset().top,
-        distance = (elementOffset - scroll),
         $img = obj.find('img'),
         $wrapper = obj.closest('.wrapper'),
-        //        event image
-        //        pos abs
-        //        width 600
-        //    height 600
-        //    bottom 0
-        //    z-index 5
-        //    right 10%
-        //
-        inverseDistance = distance * -1;
+        scroll = $(window).scrollTop();
+    //        event image
+    //        pos abs
+    //        width 600
+    //    height 600
+    //    bottom 0
+    //    z-index 5
+    //    right 10%
+    //
+    inverseDistance = distance * -1;
     if (obj.offset().top < scroll) {
         d = distance * -1;
         $anchor.animate({
             'margin-top': d
         });
     }
+
+    var elementOffset = $img.offset().top,
+        distance = (elementOffset - scroll),
+        imgTop = $img.offset().top,
+        imgLeft = $img.offset().left + $img.width() / 2;
+    //    $img.addClass('event-img');
+
     $anchor.unwrap();
+    $img.css({
+
+//        "transform": "translateX(0%)",
+//        "-webkit-transform": "translateX(0%)",
+//        "-ms-transform": "translateX(0%)",
+        'position': 'fixed',
+        'left': imgLeft,
+        'z-index': '5',
+        'top': distance
+    }).animate({
+        //        'left': '90vw',
+        //        'height': '600px',
+        //        'width': '600px'
+
+    }, 400, function () {
+
+    });
     for (i = 0; i < 4; i++) {
         $img.unwrap();
     }
-    $('.slider-transition').children().not($anchor).animate({
+
+    //        $.get('one-event.html', null, function (text) {
+    //            alert($(text).find('.get').html());
+    //            alert($(this).offset().left);
+    //        });
+
+    $('.slider-transition').children().not($img).animate({
         'opacity': '0'
     }, 400, function () {
+        //        $wrapper.siblings().remove();
+        $('.keep').siblings().remove();
+        console.log('hello');
         $(this).remove();
         //        $img.removeClass('cround').addClass('event-img');
-        $('<div class="insert"></div>').insertAfter($anchor);
+        $('<div class="insert"></div>').insertAfter($img);
         $('.insert').load(href + ' .content-div', function () {
+            //                'top': $('.event-img').offset().top
             $(this).css({
                 'opacity': '0'
             }).animate({
@@ -70,69 +102,6 @@ function growEvents(obj, href = window.location.href) {
 
         });
     });
-    var imgTop = $img.offset().top,
-        imgLeft = $img.offset().left;
-
-    $img.css({
-        'position': 'fixed',
-        'top': imgTop,
-        'left': imgLeft
-    }).animate({
-
-    })
-    //    //    $img.css({
-    //    //        'position':'absolute',
-    //    //        'z-index':'5'
-    //    //    }).animate({
-    //    //        'width':'600px',
-    //    //        'height':'600px',
-    //    //        'bottom':'0',
-    //    //        'right':'10%'
-    //    //    });
-    //    $('.slider-transition').children().not($anchor).animate({
-    //        'opacity': '0'
-    //    }, 400, function () {
-    //        $(this).remove();
-    //        //        $img.removeClass('cround').addClass('event-img');
-    //        $('<div class="insert"></div>').insertAfter($anchor);
-    //        $('.insert').load(href + ' .content-div', function () {
-    //            $(this).css({
-    //                'opacity': '0'
-    //            }).animate({
-    //                'opacity': '1'
-    //            });
-    //
-    //        });
-    //    });
-    //    obj.children().not($img).animate({
-    //        'opacity': '0'
-    //    }, 400, function () {
-    //        $(this).remove();
-    //    });
-    //    $wrapper.animate({
-    //        'padding-left': '0',
-    //        'padding-right': '0',
-    //        'margin-left': '0',
-    //        'margin-right': '0'
-    //    }, 400, function () {
-    //        $wrapper.siblings().remove();
-    //        $img.css({
-    //            'position': 'fixed',
-    //            'z-index': '5'
-    //        }).animate({
-    //            'width': '600px',
-    //            'height': '600px',
-    //            'bottom': '0',
-    //            'right': '10%'
-    //        });
-    //        $('html').scrollTop(0);
-    //        for (i = 0; i < 4; i++) {
-    //            $img.unwrap();
-    //        }
-    //
-    //    });
-
-
 }
 
 function growTwo(obj, href = window.location.href) {
