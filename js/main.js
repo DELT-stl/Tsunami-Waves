@@ -10,7 +10,6 @@ jQuery(document).ready(function ($) {
         });
         $(window).bind("popstate", function () {
             link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
-           alert($(window).scrollTop());
             //            alert(link);
             fadeTransition(link);
             $(window).scrollTop(st);
