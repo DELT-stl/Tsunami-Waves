@@ -331,6 +331,7 @@ function fadeTransition(href = window.location.href) {
         'position': 'fixed',
         //        'height': h,
         'height': '100vh',
+        'z-index':'10',
         'width': '0',
         'left': '0',
         'top': '0',
