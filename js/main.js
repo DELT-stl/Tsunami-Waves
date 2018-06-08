@@ -1,10 +1,19 @@
 jQuery(document).ready(function ($) {
     console.log('document ready');
     if (Modernizr.history) {
+        //        $(window).on('beforeunload', function () {
+        //            $(window).scrollTop(0);
+        //        });
+        var st = 0;
+        $(window).on('scroll', function() {
+            st = $(window).scrollTop();
+        });
         $(window).bind("popstate", function () {
             link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
+//            alert($(window).scrollTop());
             //            alert(link);
             fadeTransition(link);
+            $(window).scrollTop(st);
         });
         $('body').on('click', 'a', function (event) {
             event.preventDefault();
@@ -34,14 +43,6 @@ function growEvents(obj, href = window.location.href) {
         $img = obj.find('img'),
         $wrapper = obj.closest('.wrapper'),
         scroll = $(window).scrollTop();
-    //        event image
-    //        pos abs
-    //        width 600
-    //    height 600
-    //    bottom 0
-    //    z-index 5
-    //    right 10%
-    //
     inverseDistance = distance * -1;
     if (obj.offset().top < scroll) {
         d = distance * -1;
@@ -62,55 +63,38 @@ function growEvents(obj, href = window.location.href) {
     $anchor.unwrap();
     $img.css({
 
-//                "transform": "translateX(0%)",
-//                "-webkit-transform": "translateX(0%)",
-//                "-ms-transform": "translateX(0%)",
+        //                "transform": "translateX(0%)",
+        //                "-webkit-transform": "translateX(0%)",
+        //                "-ms-transform": "translateX(0%)",
         'position': 'fixed',
         'left': imgLeft,
         'z-index': '5',
         'top': distance
     }).animate({
-        'left': '+='+newRight,
+        'left': '+=' + newRight,
         'height': '+=250px',
         'width': '+=250px',
         'top': newTop
 
     }, 400, function () {
         $(this).css({
-            'position':'absolute'
+            'position': 'absolute'
         });
 
     });
     for (i = 0; i < 4; i++) {
         $img.unwrap();
     }
-
-    //            $.get('one-event.html', null, function (text) {
-    ////                alert($(text).find('.get').html());
-    //                alert($(text).find('.event-img').offset().left);
-    //            });
-    //    $.ajax({
-    //   url:href,
-    //   type:'GET',
-    //   success: function(data){
-    ////       $('#content').html($(data).find('#content').html());
-    //       alert($(data).find('.get').html());
-    //   }
-    //});
-
     $('.slider-transition').children().not($img).animate({
         'opacity': '0'
     }, 400, function () {
 
     });
     setTimeout(function () {
-        //        $wrapper.siblings().remove();
         $('.keep').siblings().remove();
         $('.slider-transition').children().not($img).remove();
-        //        $img.removeClass('cround').addClass('event-img');
         $('<div class="insert"></div>').insertAfter($img);
         $('.insert').load(href + ' .content-div', function () {
-            //                'top': $('.event-img').offset().top
             $('html').scrollTop(0);
             $('.content-div').css({
                 'opacity': '0'
@@ -331,27 +315,22 @@ function fadeTransition(href = window.location.href) {
         'position': 'fixed',
         //        'height': h,
         'height': '100vh',
-        'z-index':'10',
         'width': '0',
         'left': '0',
         'top': '0',
         'color': 'black',
         'background-color': 'black',
-        'z-index': '3'
+        'z-index': '10'
     }).animate({
         'width': '100vw',
     }, 400, function () {
         $('.slider-transition').load(href + ' .slider-transition', function () {
             //            EXECUTES ON CALLBACK
-            $('.slider-transition').children('.slider-transition').unwrap();
-            //            h = $(document).height();
             $('.fader').animate({
                 'left': '100vw'
             }, 400, function () {
                 $('.slider-transition').children('.slider-transition').unwrap();
             });
-            //            pushState(href);
-            //            initClicky();
         });
     });
 }
