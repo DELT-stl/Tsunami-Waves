@@ -20,6 +20,13 @@
 <!--a comment-->
 
 <body>
+	<div class="fixedmenu">
+		<div class="hamburger" id="hamburger-9">
+			<span class="line"></span>
+			<span class="line"></span>
+			<span class="line"></span>
+		</div>
+	</div>
     <div class="main-menu">
         <ul>
             <li>
@@ -168,18 +175,8 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
-
-    <div class="row rnp">
-        <div class="col-sm-6">
-
         </div>
-        <div class="col-sm-6">
-            <img class="hp_btm_right" src="http://www.tsunamiwavesfoundation.org/wp-content/uploads/home/hp-store-img-color.jpg">
-        </div>
-    </div>
-
     <footer>
         <div class="inner container">
             <div class="row">
@@ -211,45 +208,13 @@
         if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
     </script>
     <script>
-        $('.owl-carousel').owlCarousel({
-            stagePadding: 200,
-            loop: true,
-            margin: 10,
-            nav: false,
-            items: 1,
-            lazyLoad: true,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    stagePadding: 60
-                },
-                600: {
-                    items: 1,
-                    stagePadding: 100
-                },
-                1000: {
-                    items: 1,
-                    stagePadding: 200
-                },
-                1200: {
-                    items: 1,
-                    stagePadding: 250
-                },
-                1400: {
-                    items: 1,
-                    stagePadding: 300
-                },
-                1600: {
-                    items: 1,
-                    stagePadding: 350
-                },
-                1800: {
-                    items: 1,
-                    stagePadding: 400
-                }
-            }
-        })
+		$(document).ready(function(){
+			$(".hamburger").click(function(){
+				$(this).toggleClass("is-active");
+				$(".fixedmenubg").toggleClass("active");
+				$(".fixedmenu").toggleClass("active");
+			});
+		});
     </script>
 </body>
 </html>

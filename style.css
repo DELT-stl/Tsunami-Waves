@@ -65,8 +65,8 @@ h1 {
     font-family: 'DK-magical';
     font-size: 80px;
     line-height: 80px;
-	margin-bottom: 40px;
-	color: #ddd
+    margin-bottom: 40px;
+    color: #ddd
 }
 
 h2,
@@ -159,7 +159,10 @@ ul li a:hover {
     padding-right: 10vw;
     padding-left: 90px
 }
-
+.cpl {
+	padding-right: 90px;
+	padding-left: 10vw
+}
 .round {
     position: absolute;
     width: 350px;
@@ -167,19 +170,17 @@ ul li a:hover {
     object-fit: cover;
     border-radius: 100%;
 }
-
-.cround {
-    border-radius:100%;
-    width:350px;
-    height:350px;
-    display:block;
-    margin:auto;
-    object-fit: cover;
+.rounds {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 100%;
 }
 
 .inline {
     display: inline-block;
-        position: relative;
+    position: relative;
     z-index: 0;
     width: 32vw;
     background: #000;
@@ -187,23 +188,12 @@ ul li a:hover {
     /*    width:100%;*/
 }
 
-.round-container img {
-    display:block;
-    -webkit-transition: -webkit-transform .5s;
-    -ms-transition: -ms-transform .5s;
-    transition: transform .5s;
-    z-index:5;
-    border-radius: 100%;
-    margin: auto;
-    overflow: hidden;
-    height: 350px;
-    width: 350px;
-}
 .flex-col {
-    flex-grow:1;
+    flex-grow: 1;
 }
+
 .round-container {
-    display:block;
+    display: block;
 }
 
 .round1 {
@@ -212,17 +202,190 @@ ul li a:hover {
     left: 50%;
     transform: translateX(-50%)
 }
+.round2 {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%)
+}
 
 .round1height {
     height: 600px;
     margin-bottom: 75px
 }
+
 a {
-/*    width:100%;*/
-/*    width:33vw;*/
+    /*    width:100%;*/
+    /*    width:33vw;*/
 }
 
+/*====MISSION UPDATED====*/
+.mission2 {
+	width: 100%;
+	height: 660px;
+	object-fit: cover;
+	margin-top: 70px;
+}
+.mission1 {
+	width: 95%;
+	margin-top: 40px
+}
+.mission3 {
+	width: 95%;
+	margin: auto;
+	display: block
+}
+.mission4 {
+	height: 250px;
+	width: 400px;
+	object-fit: cover;
+	object-position: top
+}
+.mission5 {
+	width: 95%;
+	height: 650px;
+	object-fit: cover;
+	margin: auto;
+	display: block
+}
+.fuzzl {
+	font-family: 'DK-magical';
+	color: #e50a0a;
+	font-size: 90px;
+	line-height: 80px;
+	width: 500px
+}
+.fuzzr {
+	font-family: 'DK-magical';
+	color: #e50a0a;
+	font-size: 80px;
+	line-height: 70px;
+	margin-top: 100px;
+	margin-bottom: 60px
+}
+.missionstl {
+	color: #fff;
+	width: 95%;
+}
+.stl1 {
+	margin-top: 70px
+}
+.stlbgred {
+	position: absolute;
+	width: 75%;
+	background: #e50a0a;
+	top: 300px;
+	height: calc(100% - 250px)
+}
+button.right {
+	float: right;
+	overflow: hidden
+}
 /*====MENU====*/
+.logo {
+	display: block;
+	position: absolute;
+	top: 10px;
+	z-index: 5;
+	width: 100px;
+	left: 40px
+}
+.fixedmenu {
+	background: #e50a0a;
+	width: 90px;
+	height: 90px;
+	position: fixed;
+	z-index: 100;
+	transition: .3s ease;
+	transition-delay: .3s;
+	right: 40px;
+	top: 10px
+}
+.fixedmenu.active {
+	width: 100%;
+	transition: .3s ease;
+	transition-delay: 0s
+}
+
+.hamburger {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 90px;
+}
+.hamburger .line{
+	width: 50px;
+	height: 5px;
+	background-color: #ecf0f1;
+	display: block;
+	margin: 8px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+#hamburger-9 .line:nth-child(1){
+	margin-top: 0px
+}
+.hamburger:hover{
+	cursor: pointer;
+}
+#hamburger-9{
+	position: relative;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+#hamburger-9.is-active{
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	margin-top: -15px
+}
+
+#hamburger-9:before{
+	content: "";
+	position: absolute;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 70px;
+	height: 70px;
+	border: 5px solid transparent;
+	top: calc(50% - 35px);
+	left: calc(50% - 35px);
+	border-radius: 100%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+#hamburger-9.is-active:before{
+	border: 5px solid #ecf0f1;
+}
+
+#hamburger-9.is-active .line{
+	width: 35px;
+}
+
+#hamburger-9.is-active .line:nth-child(2){
+	opacity: 0;
+}
+
+#hamburger-9.is-active .line:nth-child(1){
+	-webkit-transform: translateY(13px);
+	-ms-transform: translateY(13px);
+	-o-transform: translateY(13px);
+	transform: translateY(13px);
+}
+
+#hamburger-9.is-active .line:nth-child(3){
+	-webkit-transform: translateY(-13px) rotate(90deg);
+	-ms-transform: translateY(-13px) rotate(90deg);
+	-o-transform: translateY(-13px) rotate(90deg);
+	transform: translateY(-13px) rotate(90deg);
+}
+
+
 
 .main-menu {
     position: absolute;
@@ -233,17 +396,19 @@ a {
 
 .main-menu ul {
     position: absolute;
-    right: 10%;
-    height: 70px
+    height: 90px;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%)
 }
 
 .main-menu li {
     list-style: none;
     display: inline-block;
     color: #fff;
-    line-height: 70px;
+    line-height: 100px;
     margin-left: 25px;
-    font-size: 14px
+    font-size: 18px
 }
 
 /*====HOMEPAGE====*/
@@ -271,6 +436,10 @@ a {
     background-image: url(img/fan-photo.jpg);
     height: 600px;
     position: relative;
+}
+
+.fader {
+    z-index: 9;
 }
 
 .top-section {
@@ -374,38 +543,8 @@ button {
 }
 
 
-.banner-homepage ul {
-    position: absolute;
-    color: white;
-    top: 0;
-    right: 0;
-    width: 50%;
-}
 
-.banner-homepage ul li {
-    text-transform: uppercase;
-    float: right;
-    padding-right: 50px;
-    padding-top: 20px;
-    position: relative;
-    display: inline-block;
-}
-
-.homepage-middle {
-    width: 100%;
-    height: 115vh;
-    position: relative;
-}
-
-.homepage-middle h2 {
-    width: 80%;
-    text-align: center;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.anchor .wrapper {
+.anchor .skew {
     width: 100%;
     position: relative;
     transform: skewY(-2deg);
@@ -415,18 +554,30 @@ button {
     overflow: visible;
 }
 
+.anchor .cround {
+    -webkit-transition: -webkit-transform .4s;
+    -ms-transition: -ms-transform .4s;
+    transition: transform .4s;
+
+}
+
+.events-two .wrapper {
+    width: 100%;
+    position: relative;
+    overflow: visible;
+
+}
+
 .anchor .wrapper * {
     z-index: 1;
 }
 
-.anchor .wrapper img {
+.skew img {
     position: relative;
     object-fit: cover;
     object-position: top;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    /*    width: 100%;*/
+    /*    height: 100%;*/
     object-fit: cover;
     opacity: .8
 }
@@ -438,34 +589,7 @@ button {
     padding-right: 15px;
 }
 
-.slanted {
-    position: relative;
-    z-index: 0;
-    width: 32vw;
-    background: #000;
-    height: 550px;
-}
 
-.slanted .background {
-    width: 33.333333333%;
-    height: 100%;
-    position: relative;
-    background-image: url(img/Baseball-Photo.jpg);
-    z-index: 0;
-    opacity: .8;
-
-}
-
-.slanted h2 {
-    color: #fff;
-    left: 20px;
-    margin-bottom: 0px;
-    transform: skewY(2deg);
-}
-
-.slanted button {
-    transform: skewY(2deg);
-}
 .hp_btm_right {
     width: 100%;
     height: 700px;
@@ -473,33 +597,6 @@ button {
 }
 
 
-
-
-.full-slant {
-    -webkit-clip-path: polygon(0 26%, 100% 10%, 100% 74%, 0 90%);
-    clip-path: polygon(0 26%, 100% 10%, 100% 74%, 0 90%);
-    width: 100%;
-    overflow: hidden;
-    height: 90vh;
-}
-
-.full-slant img {
-    width: 100%;
-    object-position: center;
-    position: absolute;
-}
-
-.full-slant p {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40%;
-    right: 5%;
-    z-index: 5;
-    color: white;
-    font-size: 25px;
-    font-family: 'Hind';
-}
 
 .col-sm-6 {
     /*    display:inline-block;*/
@@ -541,70 +638,80 @@ button {
     margin-right: auto;
     width: 40%;
 }
+
 .datebox {
-	border-right: 2px solid #eee;
-	height: 120px;
-	border-bottom: 2px solid #eee;
-	padding-top: 20px
+    border-right: 2px solid #eee;
+    height: 120px;
+    border-bottom: 2px solid #eee;
+    padding-top: 20px
 }
+
 .eventbox {
-	height: 120px;
-	border-bottom: 2px solid #eee;
-	font-weight: 600;
-	font-size: 29px;
-	position: relative;
-	width: 100%;
-	text-align: center
+    height: 120px;
+    border-bottom: 2px solid #eee;
+    font-weight: 600;
+    font-size: 29px;
+    position: relative;
+    width: 100%;
+    text-align: center
 }
+
 .eventname {
-	position: absolute;
-	width: 100%;
-	top: 50%;
-	transform: translateY(-50%)
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%)
 }
+
 .eventname h4 {
-	text-align: center;
-	font-size: 20px;
-	margin-bottom: 0px;
-	color: red
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0px;
+    color: red
 }
+
 .eventname button {
-	font-size: 14px;
-	font-weight: 600;
-	float: right
+    font-size: 14px;
+    font-weight: 600;
+    float: right
 }
+
 .eventname span {
-	font-size: 14px;
+    font-size: 14px;
 }
+
 .eventbox svg {
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	right: 0;
-	top: 50%;
-	transform: translateY(-50%) rotate(40deg);
-	fill: #bbb
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(40deg);
+    fill: #bbb
 }
+
 .upcoming-events .date {
     font-size: 70px;
-	line-height: 60px;
-	color: #bbb;
-	font-family: 'Hind', sans-serif;
-	margin-bottom: 0px;
+    line-height: 60px;
+    color: #bbb;
+    font-family: 'Hind', sans-serif;
+    margin-bottom: 0px;
 }
+
 .date span {
-	font-size: 15px;
-	position: absolute;
-	top: 20px;
-	line-height: 20px;
-	font-family: 'Hind', sans-serif;
-	font-weight: 600
+    font-size: 15px;
+    position: absolute;
+    top: 20px;
+    line-height: 20px;
+    font-family: 'Hind', sans-serif;
+    font-weight: 600
 }
+
 .month {
-	color: #bbb;
-	font-weight: 600;
-	text-transform: uppercase;
-	padding-left: 10px
+    color: #bbb;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 10px
 }
 
 
@@ -621,36 +728,20 @@ button {
     margin: auto;
 }
 
-.mission-bottom .col-sm-12 img {
-    /*    position:absolute;*/
-    position: absolute;
-    z-index: 3;
-    top: -150px;
-}
 
-.mission-bottom p,
-.mission-bottom h2 {
-    position: relative;
-    top: 40%;
-    width: 90%;
-    margin: auto;
-}
 
-.mission-bottom h2 {
-    margin-bottom: 3%
-}
-
-.mission-bottom .half-vw {
-    /*
-    height:100vh;
-    margin-left:5%;
-*/
-}
-
+/* The position is absolute, use "right: {number here}"
 .mission-bottom .fan-photo img {
     position: absolute !important;
     bottom: -30%;
     margin-left: 30%;
+}
+*/
+
+.round3 {
+	position: absolute !important;
+	bottom: -10px;
+	right: 10px;
 }
 
 .events-header {
@@ -697,7 +788,9 @@ button {
     width: 40%;
 }
 
-
+.circleclear {
+	height: 200px
+}
 
 .item-one {
     position: relative;
@@ -733,17 +826,10 @@ button {
     font-size: 16px;
 }
 
-.logo {
-    display: block;
-    position: absolute;
-    top: 10px;
-    z-index: 5;
-    width: 110px;
-	left: 50%;
-	transform: translateX(-50%)
-}
+
+
 a {
-/*
+    /*
     position:absolute;
     height:100%;
     width:100%;
@@ -754,94 +840,135 @@ a {
 ul {
     padding: 0 0 0 0px
 }
+
 /*
 *  Owl Carousel - Animate Plugin
 */
+
 .esb {
-	position: absolute;
-	width: 500px;
+    position: absolute;
+    width: 500px;
 }
+
 .event-slider {
-	position: relative;
-	background: #f3f3f3;
-	margin-bottom: 80px
+    position: relative;
+    background: #f3f3f3;
+    margin-bottom: 80px
 }
+
 .sliderplaceholder img {
-	width: 100%;
-	margin-bottom: -80px;
-	height: 700px;
-	object-fit: cover
+    width: 100%;
+    margin-bottom: -80px;
+    height: 700px;
+    object-fit: cover
 }
 
 /*====EVENTS====*/
+
 .event_content {
-	position: relative;
-	height: 100vh;
+    position: relative;
+    height: 100vh;
 }
+
 .event-title-bg {
-	position: relative;
-	height: 70vh;
-	background: #252834
+    position: relative;
+    height: 70vh;
+    background: #252834
 }
+
+img {
+    /*    transition: .3s;*/
+}
+
 .event_content h3 {
-	font-family: 'Hind', sans-serif;
-	text-transform: none;
-	font-weight: 600;
-	font-size: 24px;
+    font-family: 'Hind', sans-serif;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 24px;
 }
+
 .event-img {
-	position: absolute;
-	width: 600px;
-	height: 600px;
-	bottom: 0;
-	border-radius: 100%;
-	right: 10%;
-	object-fit: cover
+    transition: .3s;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    bottom: 0;
+    z-index: 5;
+    border-radius: 100%;
+    right: 10%;
+    object-fit: cover
 }
+
 .event-title h1 {
-	font-family: 'Bravest';
-	font-size: 60px;
-	line-height: 60px
+    font-family: 'Bravest';
+    font-size: 60px;
+    line-height: 60px
 }
+
 .event-title h4 {
-	color: #fff
+    color: #fff
 }
+
 .event-title {
-	position: absolute;
-	width: 40%;
-	left: 10%;
-	top: 50%;
-	transform: translateY(-50%);
-	padding-top: 80px;
-	color: #fff;
-	font-size: 20px;
+    position: absolute;
+    width: 40%;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-top: 80px;
+    color: #fff;
+    font-size: 20px;
 }
 
 /*====FOOTER====*/
+
 footer {
     background: black
 }
+
 footer li {
     list-style: none;
     margin-bottom: 15px
 }
+
 footer li a {
     color: #fff
 }
+
 footer img {
     width: 140px;
     float: right;
     overflow: hidden
 }
+
 .copyright {
     color: #fff;
     margin: 80px 0px 0px;
     line-height: 36px
 }
+
 .copyright a {
     color: #bbb;
     text-transform: uppercase
 }
+
+.cround {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /*
+    -webkit-transition: -webkit-transform .4s;
+    -ms-transition: -ms-transform .4s;
+    transition: transform .4s;
+*/
+    /*    bottom:0;*/
+    border-radius: 100%;
+    width: 350px;
+    height: 350px;
+    display: block;
+    object-fit: cover;
+}
+
 /*====DIVIDERS====*/
 
 .divide10 {
@@ -939,7 +1066,6 @@ footer img {
     -webkit-transition: -webkit-transform .5s;
     -ms-transition: -ms-transform .5s;
     transition: transform .5s;
-/*        width:100%;*/
 }
 
 .flex-col {
@@ -948,8 +1074,9 @@ footer img {
     padding-left: 15px;
     padding-right: 15px;
 }
+
 .anchor {
-    position:relative;
+    position: relative;
 }
 
 .skew {
@@ -983,7 +1110,7 @@ footer img {
     z-index: 0;
     width: 32vw;
     background: #000;
-    height: 400px;
+    height: 550px;
 }
 
 .slanted .background {
@@ -1002,8 +1129,9 @@ footer img {
     margin-bottom: 0px;
     transform: skewY(2deg);
 }
+
 .img-container {
-    position:relative;
+    position: relative;
 }
 
 .slanted button {
@@ -1011,7 +1139,6 @@ footer img {
 }
 
 /*index*/
-
 
 .slantedin {
     position: absolute;
@@ -1022,16 +1149,15 @@ footer img {
 
 /*events*/
 
-
 .events-two img {
-/*    left:50%;*/
-/*
+    /*    left:50%;*/
+    /*
     left:50%;
     transform: translateX(-50%);
 */
 }
-.events-two .flex-row {
-}
+
+.events-two .flex-row {}
 
 .events-two h4 {
     position: absolute;
