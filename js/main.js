@@ -335,8 +335,7 @@ function fadeTransition(href = window.location.href) {
         'left': '0',
         'top': '0',
         'color': 'black',
-        'background-color': 'black',
-        'z-index': '3'
+        'background-color': 'black'
     }).animate({
         'width': '100vw',
     }, 400, function () {
