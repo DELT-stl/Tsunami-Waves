@@ -159,7 +159,10 @@ ul li a:hover {
     padding-right: 10vw;
     padding-left: 90px
 }
-
+.cpl {
+	padding-right: 90px;
+	padding-left: 10vw
+}
 .round {
     position: absolute;
     width: 350px;
@@ -167,7 +170,13 @@ ul li a:hover {
     object-fit: cover;
     border-radius: 100%;
 }
-
+.rounds {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 100%;
+}
 
 .inline {
     display: inline-block;
@@ -177,19 +186,6 @@ ul li a:hover {
     background: #000;
     height: 400px;
     /*    width:100%;*/
-}
-
-.round-container img {
-    display: block;
-    -webkit-transition: -webkit-transform .5s;
-    -ms-transition: -ms-transform .5s;
-    transition: transform .5s;
-    z-index: 5;
-    border-radius: 100%;
-    margin: auto;
-    overflow: hidden;
-    height: 350px;
-    width: 350px;
 }
 
 .flex-col {
@@ -205,6 +201,11 @@ ul li a:hover {
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%)
+}
+.round2 {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%)
 }
 
 .round1height {
@@ -488,28 +489,25 @@ button {
 
 
 .full-slant {
-    -webkit-clip-path: polygon(0 26%, 100% 10%, 100% 74%, 0 90%);
-    clip-path: polygon(0 26%, 100% 10%, 100% 74%, 0 90%);
     width: 100%;
     overflow: hidden;
     height: 90vh;
+	background: url(http://www.tsunamiwavesfoundation.org/wp-content/uploads/2017/03/quote-img.jpg) center center no-repeat;
+	background-size: cover;
+	transform: skewY(-2deg);
+	margin-top: 20px
 }
 
-.full-slant img {
-    width: 100%;
-    object-position: center;
-    position: absolute;
-}
 
 .full-slant p {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    width: 40%;
-    right: 5%;
+    transform: translateY(-50%) skewY(2deg);
+    width: 35%;
+    right: 10%;
     z-index: 5;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Hind';
 }
 
@@ -643,36 +641,20 @@ button {
     margin: auto;
 }
 
-.mission-bottom .col-sm-12 img {
-    /*    position:absolute;*/
-    position: absolute;
-    z-index: 3;
-    top: -150px;
-}
 
-.mission-bottom p,
-.mission-bottom h2 {
-    position: relative;
-    top: 40%;
-    width: 90%;
-    margin: auto;
-}
 
-.mission-bottom h2 {
-    margin-bottom: 3%
-}
-
-.mission-bottom .half-vw {
-    /*
-    height:100vh;
-    margin-left:5%;
-*/
-}
-
+/* The position is absolute, use "right: {number here}"
 .mission-bottom .fan-photo img {
     position: absolute !important;
     bottom: -30%;
     margin-left: 30%;
+}
+*/
+
+.round3 {
+	position: absolute !important;
+	bottom: -10px;
+	right: 10px;
 }
 
 .events-header {
@@ -719,7 +701,9 @@ button {
     width: 40%;
 }
 
-
+.circleclear {
+	height: 200px
+}
 
 .item-one {
     position: relative;
