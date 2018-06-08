@@ -269,7 +269,7 @@ a {
 }
 
 .fader {
-    z-index: 6;
+    z-index: 9;
 }
 
 .top-section {
@@ -414,13 +414,16 @@ button {
     overflow: visible;
 }
 
+.anchor .cround {
+    -webkit-transition: -webkit-transform .4s;
+    -ms-transition: -ms-transform .4s;
+    transition: transform .4s;
+
+}
+
 .events-two .wrapper {
     width: 100%;
     position: relative;
-    /*    transform: skewY(-2deg);*/
-    -webkit-transition: -webkit-transform .5s;
-    -ms-transition: -ms-transform .5s;
-    transition: transform .5s;
     overflow: visible;
 
 }
@@ -811,7 +814,7 @@ ul {
 }
 
 img {
-    transition: .3s;
+    /*    transition: .3s;*/
 }
 
 .event_content h3 {
@@ -890,16 +893,17 @@ footer img {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    /*
     -webkit-transition: -webkit-transform .4s;
     -ms-transition: -ms-transform .4s;
     transition: transform .4s;
+*/
     /*    bottom:0;*/
     border-radius: 100%;
     width: 350px;
     height: 350px;
     display: block;
     object-fit: cover;
-    transition: .4s;
 }
 
 /*====DIVIDERS====*/
