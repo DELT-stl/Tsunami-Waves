@@ -24,12 +24,7 @@ jQuery(document).ready(function ($) {
         $('body').on('click', 'a.grow', function () {
             _href = $(this).attr('href');
             history.pushState(null, null, _href);
-<<<<<<< HEAD
-            growTwo($(this));
-=======
-            //            growTwo($(this));
             growEvents($(this));
->>>>>>> origin/events-circle
         });
     } else {}
 }); // ready jquery
