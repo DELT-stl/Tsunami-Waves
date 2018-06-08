@@ -159,10 +159,7 @@ ul li a:hover {
     padding-right: 10vw;
     padding-left: 90px
 }
-.cpl {
-	padding-right: 90px;
-	padding-left: 10vw
-}
+
 .round {
     position: absolute;
     width: 350px;
@@ -170,13 +167,7 @@ ul li a:hover {
     object-fit: cover;
     border-radius: 100%;
 }
-.rounds {
-	position: absolute;
-	width: 300px;
-	height: 300px;
-	object-fit: cover;
-	border-radius: 100%;
-}
+
 
 .inline {
     display: inline-block;
@@ -186,6 +177,19 @@ ul li a:hover {
     background: #000;
     height: 400px;
     /*    width:100%;*/
+}
+
+.round-container img {
+    display: block;
+    -webkit-transition: -webkit-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s;
+    z-index: 5;
+    border-radius: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 350px;
+    width: 350px;
 }
 
 .flex-col {
@@ -202,11 +206,6 @@ ul li a:hover {
     left: 50%;
     transform: translateX(-50%)
 }
-.round2 {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%)
-}
 
 .round1height {
     height: 600px;
@@ -218,174 +217,7 @@ a {
     /*    width:33vw;*/
 }
 
-/*====MISSION UPDATED====*/
-.mission2 {
-	width: 100%;
-	height: 660px;
-	object-fit: cover;
-	margin-top: 70px;
-}
-.mission1 {
-	width: 95%;
-	margin-top: 40px
-}
-.mission3 {
-	width: 95%;
-	margin: auto;
-	display: block
-}
-.mission4 {
-	height: 250px;
-	width: 400px;
-	object-fit: cover;
-	object-position: top
-}
-.mission5 {
-	width: 95%;
-	height: 650px;
-	object-fit: cover;
-	margin: auto;
-	display: block
-}
-.fuzzl {
-	font-family: 'DK-magical';
-	color: #e50a0a;
-	font-size: 90px;
-	line-height: 80px;
-	width: 500px
-}
-.fuzzr {
-	font-family: 'DK-magical';
-	color: #e50a0a;
-	font-size: 80px;
-	line-height: 70px;
-	margin-top: 100px;
-	margin-bottom: 60px
-}
-.missionstl {
-	color: #fff;
-	width: 95%;
-}
-.stl1 {
-	margin-top: 70px
-}
-.stlbgred {
-	position: absolute;
-	width: 75%;
-	background: #e50a0a;
-	top: 300px;
-	height: calc(100% - 250px)
-}
-button.right {
-	float: right;
-	overflow: hidden
-}
 /*====MENU====*/
-.logo {
-	display: block;
-	position: absolute;
-	top: 10px;
-	z-index: 5;
-	width: 100px;
-	left: 40px
-}
-.fixedmenu {
-	background: #e50a0a;
-	width: 90px;
-	height: 90px;
-	position: fixed;
-	z-index: 100;
-	transition: .3s ease;
-	transition-delay: .3s;
-	right: 40px;
-	top: 10px
-}
-.fixedmenu.active {
-	width: 100%;
-	transition: .3s ease;
-	transition-delay: 0s
-}
-
-.hamburger {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 90px;
-}
-.hamburger .line{
-	width: 50px;
-	height: 5px;
-	background-color: #ecf0f1;
-	display: block;
-	margin: 8px auto;
-	-webkit-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-#hamburger-9 .line:nth-child(1){
-	margin-top: 0px
-}
-.hamburger:hover{
-	cursor: pointer;
-}
-#hamburger-9{
-	position: relative;
-	-webkit-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-#hamburger-9.is-active{
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-	margin-top: -15px
-}
-
-#hamburger-9:before{
-	content: "";
-	position: absolute;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 70px;
-	height: 70px;
-	border: 5px solid transparent;
-	top: calc(50% - 35px);
-	left: calc(50% - 35px);
-	border-radius: 100%;
-	-webkit-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-
-#hamburger-9.is-active:before{
-	border: 5px solid #ecf0f1;
-}
-
-#hamburger-9.is-active .line{
-	width: 35px;
-}
-
-#hamburger-9.is-active .line:nth-child(2){
-	opacity: 0;
-}
-
-#hamburger-9.is-active .line:nth-child(1){
-	-webkit-transform: translateY(13px);
-	-ms-transform: translateY(13px);
-	-o-transform: translateY(13px);
-	transform: translateY(13px);
-}
-
-#hamburger-9.is-active .line:nth-child(3){
-	-webkit-transform: translateY(-13px) rotate(90deg);
-	-ms-transform: translateY(-13px) rotate(90deg);
-	-o-transform: translateY(-13px) rotate(90deg);
-	transform: translateY(-13px) rotate(90deg);
-}
-
-
 
 .main-menu {
     position: absolute;
@@ -396,19 +228,17 @@ button.right {
 
 .main-menu ul {
     position: absolute;
-    height: 90px;
-	top: 0px;
-	left: 50%;
-	transform: translateX(-50%)
+    right: 10%;
+    height: 70px
 }
 
 .main-menu li {
     list-style: none;
     display: inline-block;
     color: #fff;
-    line-height: 100px;
+    line-height: 70px;
     margin-left: 25px;
-    font-size: 18px
+    font-size: 14px
 }
 
 /*====HOMEPAGE====*/
@@ -439,7 +269,6 @@ button.right {
 }
 
 .fader {
-    z-index: 9;
 }
 
 .top-section {
@@ -543,6 +372,36 @@ button {
 }
 
 
+.banner-homepage ul {
+    position: absolute;
+    color: white;
+    top: 0;
+    right: 0;
+    width: 50%;
+}
+
+.banner-homepage ul li {
+    text-transform: uppercase;
+    float: right;
+    padding-right: 50px;
+    padding-top: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.homepage-middle {
+    width: 100%;
+    height: 115vh;
+    position: relative;
+}
+
+.homepage-middle h2 {
+    width: 80%;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .anchor .skew {
     width: 100%;
@@ -567,19 +426,18 @@ button {
     overflow: visible;
 
 }
-
-.anchor .cround {
-    -webkit-transition: -webkit-transform .4s;
-    -ms-transition: -ms-transform .4s;
-    transition: transform .4s;
-
-}
-
-.events-two .wrapper {
-    width: 100%;
-    position: relative;
-    overflow: visible;
-
+.events-two h4 {
+  position:absolute;
+  line-height:800px;
+  z-index:1;
+  text-align:center;
+  width:100%;
+  left:50%;
+  transform: translateX(-50%);
+  /* width:50%;
+  display:block;
+  position:relative;
+  margin:auto !important; */
 }
 
 .anchor .wrapper * {
@@ -603,6 +461,13 @@ button {
     padding-right: 15px;
 }
 
+.slanted {
+    position: relative;
+    z-index: 0;
+    width: 32vw;
+    background: #000;
+    height: 550px;
+}
 
 .slanted .background {
     width: 33.333333333%;
@@ -632,6 +497,33 @@ button {
 }
 
 
+
+
+.full-slant {
+    -webkit-clip-path: polygon(0 26%, 100% 10%, 100% 74%, 0 90%);
+    clip-path: polygon(0 26%, 100% 10%, 100% 74%, 0 90%);
+    width: 100%;
+    overflow: hidden;
+    height: 90vh;
+}
+
+.full-slant img {
+    width: 100%;
+    object-position: center;
+    position: absolute;
+}
+
+.full-slant p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    right: 5%;
+    z-index: 5;
+    color: white;
+    font-size: 25px;
+    font-family: 'Hind';
+}
 
 .col-sm-6 {
     /*    display:inline-block;*/
@@ -763,20 +655,36 @@ button {
     margin: auto;
 }
 
+.mission-bottom .col-sm-12 img {
+    /*    position:absolute;*/
+    position: absolute;
+    z-index: 3;
+    top: -150px;
+}
 
+.mission-bottom p,
+.mission-bottom h2 {
+    position: relative;
+    top: 40%;
+    width: 90%;
+    margin: auto;
+}
 
-/* The position is absolute, use "right: {number here}"
+.mission-bottom h2 {
+    margin-bottom: 3%
+}
+
+.mission-bottom .half-vw {
+    /*
+    height:100vh;
+    margin-left:5%;
+*/
+}
+
 .mission-bottom .fan-photo img {
     position: absolute !important;
     bottom: -30%;
     margin-left: 30%;
-}
-*/
-
-.round3 {
-	position: absolute !important;
-	bottom: -10px;
-	right: 10px;
 }
 
 .events-header {
@@ -823,9 +731,7 @@ button {
     width: 40%;
 }
 
-.circleclear {
-	height: 200px
-}
+
 
 .item-one {
     position: relative;
@@ -861,7 +767,15 @@ button {
     font-size: 16px;
 }
 
-
+.logo {
+    display: block;
+    position: absolute;
+    top: 10px;
+    z-index: 5;
+    width: 110px;
+    left: 50%;
+    transform: translateX(-50%)
+}
 
 a {
     /*
@@ -1098,9 +1012,9 @@ footer img {
 
 .flex-row {
     display: flex;
-    -webkit-transition: -webkit-transform .4s;
-    -ms-transition: -ms-transform .4s;
-    transition: transform .4s;
+    -webkit-transition: -webkit-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s;
 }
 
 .flex-col {
@@ -1118,9 +1032,9 @@ footer img {
     width: 100%;
     position: relative;
     transform: skewY(-2deg);
-    -webkit-transition: -webkit-transform .4s;
-    -ms-transition: -ms-transform .4s;
-    transition: transform .4s;
+    -webkit-transition: -webkit-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s;
     overflow: visible;
 }
 
@@ -1145,7 +1059,7 @@ footer img {
     z-index: 0;
     width: 32vw;
     background: #000;
-    height: 550px;
+    height: 400px;
 }
 
 .slanted .background {
