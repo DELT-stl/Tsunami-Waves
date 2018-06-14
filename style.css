@@ -236,9 +236,122 @@ a {
 	position: absolute;
 	right: 0;
 }
+.dots2 {
+	background: #ffffff;
+	background-image:
+		radial-gradient(#e50a0a 20%, transparent 0),
+		radial-gradient(#e50a0a 20%, transparent 0);
+	background-size: 15px 15px;
+	background-position: 0 0, 15px 15px;
+	height: 35%;
+	bottom: 0;
+	width: 190px;
+	position: absolute;
+	margin-bottom: -60px
+}
 .rel {
 	position: relative
 }
+.background-cover {
+	background: no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.parallax {
+	position: relative;
+	background: transparent;
+	overflow-y: hidden;
+}
+.bbg {
+	background: #000
+}
+.p1 {
+	height: 650px;
+}
+.p3 {
+	height: 660px;
+	width: 95%;
+	margin-left: 5%
+}
+.p4 {
+	height: 720px;
+	width: 95%;
+}
+.parallax-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	opacity: .7
+}
+
+.s1 .parallax-bg {
+	background-image: url('http://www.tsunamiwavesfoundation.org/wp-content/uploads/IMG_8935.jpg');
+	background-position: center bottom;
+	background-size: cover;
+}
+.s2 .parallax-bg {
+	background-image: url('http://www.tsunamiwavesfoundation.org/wp-content/uploads/PAL-35-of-41.jpg');
+	background-position: center center;
+	background-size: cover;
+}
+.s3 .parallax-bg  {
+	background-image: url('http://www.tsunamiwavesfoundation.org/wp-content/uploads/IMG_8526.jpg');
+	background-position: center center;
+	background-size: cover;
+	opacity: 1;
+}
+.s4 .parallax-bg  {
+	background-image: url('http://www.tsunamiwavesfoundation.org/wp-content/uploads/4F0A9343.jpg');
+	background-position: center center;
+	background-size: cover;
+	opacity: 1
+}
+.s1 h3, .s2 h3, .s3 h3 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+	color: #fff
+}
+
+/*
+.bg {
+	width: 100%;
+	height: 90vh;
+	overflow: hidden;
+	box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.9);
+	position: relative;
+}
+
+
+.s1{
+	height: 650px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100% !important;
+}
+.s1{
+	background-image: url('img/Carlos-Mart%C3%ADnez.jpg');
+}
+.s2{
+	height: 600px;
+	background-image: url('img/red-hat-3.jpg') center center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.s2{
+
+}
+
 .parallax-window {
 	max-height: 600px;
 	overflow: hidden;
@@ -248,6 +361,7 @@ a {
 	height: 600px;
 	transition: .4s ease-in-out
 }
+*/
 /*
 .parallax-window:hover {
 	width: calc(100% - 40px);
@@ -256,6 +370,7 @@ a {
 	margin-top: 20px
 }
 */
+/*
 .parallax-static-content {
 	color: #9A9A8A;
 	padding: 8em 0;
@@ -289,6 +404,7 @@ a {
 	top: -10%;
 	width: 100%;
 }
+*/
 
 .slideshow {
 	overflow: hidden;
@@ -348,15 +464,6 @@ a {
 	background-size: cover;
 	image-rendering: optimizeQuality;
 	will-change: left, right;
-}
-.slide .image-container:before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	content: "";
-	background: rgba(54, 47, 22, 0.2);
 }
 .slide .image-container:after {
 	position: absolute;
@@ -767,7 +874,9 @@ button.right {
 	top: 10px;
 	z-index: 5;
 	width: 100px;
-	left: 40px
+	left: 40px;
+	transition: .2s;
+	transition-delay: .3s
 }
 .fixedmenu {
 	background: #e50a0a;
@@ -778,14 +887,50 @@ button.right {
 	transition: .3s ease;
 	transition-delay: .3s;
 	right: 40px;
-	top: 10px
-}
-.fixedmenu.active {
-	width: 100%;
-	transition: .3s ease;
-	transition-delay: 0s
+	top: 10px;
 }
 
+.fixedmenubg {
+	background: #e50a0a;
+	width: 0px;
+	height: 90px;
+	position: fixed;
+	z-index: 80;
+	transition: .3s ease;
+	transition-delay: .3s;
+	right: 40px;
+	top: 10px;
+	transition: .3s ease;
+	text-align: center
+}
+.fixedmenubg.active {
+	width: calc(100% - 80px)
+}
+.fixedmenubg li {
+	list-style: none;
+	display: inline-block;
+	line-height: 90px;
+	text-transform: uppercase;
+	font-size: 20px;
+	margin: 0px 15px;
+	opacity: 0;
+}
+.fixedmenubg.active li {
+	opacity: 1;
+	transition: .3s ease;
+	transition-delay: .4s
+}
+.fixedmenubg li a {
+	color: #fff
+}
+.main-menu.active {
+	opacity: 0;
+	transition: .2s
+}
+.logo.active {
+	opacity: 0;
+	transition: .2s
+}
 .hamburger {
 	position: absolute;
 	top: 50%;
@@ -869,9 +1014,10 @@ button.right {
 
 .main-menu {
     position: absolute;
-    z-index: 100;
+    z-index: 70;
     width: 100%;
-
+	transition: .2s;
+	transition-delay: .3s
 }
 
 .main-menu ul {
@@ -888,7 +1034,8 @@ button.right {
     color: #fff;
     line-height: 100px;
     margin-left: 25px;
-    font-size: 18px
+    font-size: 21px;
+	text-transform: uppercase
 }
 
 /*====HOMEPAGE====*/
@@ -1013,13 +1160,14 @@ button.right {
 button {
     height: 50px;
     border-radius: 50px;
-    background: yellow;
+    background: red;
     font-weight: bold;
     margin-top: 5%;
     border: 0;
     position: relative;
     z-index: 1;
-    padding: 10px 25px
+    padding: 10px 25px;
+	color: #fff
 }
 
 

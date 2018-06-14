@@ -28,6 +28,18 @@
 			<span class="line"></span>
 		</div>
 	</div>
+	<div class="fixedmenubg">
+		<li><a href="/">Home</a></li>
+		<li><a href="/mission">mission</a></li>
+		<li><a href="/events">events</a></li>
+		<li><a href="/store">store</a></li>
+		<li><a href="/donate">donate</a></li>
+		<li><a href="/sponsors">sponsors</a></li>
+		<li><a href="/news">news</a></li>
+		<li><a href="/videos">gallery</a></li>
+		<li><a href="/contact">contact</a></li>
+	</div>
+
     <div class="main-menu">
         <ul>
             <li>
@@ -123,14 +135,11 @@
 							<div class="cities__slide slide">
 								<div class="slide__slide-content">
 									<span></span>
-									<h2>
-										<a href="#Philadelphia">Los Angeles</a>
-									</h2>
 								</div>
 								<div class="image-container">
 									<img
 										 src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs="
-										 data-src="https://i.imgpile.com/n55WEx.jpg"
+										 data-src="http://www.tsunamiwavesfoundation.org/wp-content/uploads/PAL-18-of-41.jpg"
 										 alt="bracelets-bijoux-createur"
 										 class="image queue-loading as-background"/>
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -144,14 +153,11 @@
 							<div class="cities__slide slide">
 								<div class="slide__slide-content">
 									<span></span>
-									<h2>
-										<a href="#Philadelphia">New York</a>
-									</h2>
 								</div>
 								<div class="image-container">
 									<img
 										 src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs="
-										 data-src="https://i.imgpile.com/n55WEx.jpg"
+										 data-src="http://www.tsunamiwavesfoundation.org/wp-content/uploads/vitilla-2.jpg"
 										 alt="bracelets-bijoux-createur"
 										 class="image queue-loading as-background"/>
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -186,19 +192,18 @@
         </div>
 
 		<div class="inner">
+			<div class="dots2"></div>
 			<div class="row rnp">
 				<div class="col-sm-6">
-					<div id="js-parallax-window" class="parallax-window">
-						<div class="parallax-static-content"></div>
-						<div id="js-parallax-background" class="pb"></div>
+					<div class="parallax s1 p1 bbg" data-speed=".6">
+						<div class="parallax-bg background-cover"></div>
 						<h3>tsunami store</h3>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="divide100"></div>
-					<div id="js-parallax-window" class="parallax-window">
-						<div class="parallax-static-content"></div>
-						<div id="js-parallax-background" class="pb2"></div>
+					<div class="parallax s2 p1 bbg" data-speed=".6">
+						<div class="parallax-bg background-cover"></div>
 						<h3>tsunami store</h3>
 					</div>
 				</div>
@@ -291,9 +296,15 @@
 				$(this).toggleClass("is-active");
 				$(".fixedmenubg").toggleClass("active");
 				$(".fixedmenu").toggleClass("active");
+				$(".logo").toggleClass("active");
+				$(".main-menu").toggleClass("active");
 			});
 		});
 
     </script>
+	<script>
+		function getSupportedTransform(){for(var t="transform WebkitTransform MozTransform OTransform msTransform".split(" "),e=document.createElement("div"),n=0;n<t.length;n++)if(e&&void 0!==e.style[t[n]])return t[n];return!1}!function(){var n=getSupportedTransform();if(!n)return;var t,i;$(document).ready(function(){t=$(".parallax"),i=$(window).height(),$(window).scroll(),t.parallaxInit()}),$(window).resize(function(){i=$(window).height(),t.parallaxInit()}),$.fn.parallaxInit=function(){this.each(function(){var t=$(this).outerHeight(),e=parseFloat($(this).data("speed"))||.5;t+=$(this).outerHeight()*e,t=i+$(this).outerHeight()*(1-e),$(this).find(".parallax-bg").css("height",t)})},$(window).scroll(function(){window.requestAnimationFrame(e)});var a,r,o,s=document.getElementsByClassName("parallax"),m=s.length;function e(){for(o=0;o<m;o++)if(a=s[o],(r=a.getBoundingClientRect().top)<i&&0<r+a.offsetHeight){var t=parseFloat(a.getAttribute("data-speed"))||.5,e=-r*t;a.getElementsByClassName("parallax-bg")[0].style[n]="translate(0, "+e+"px)"}}}(),window.requestAnimationFrame||(window.requestAnimationFrame=window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(t,e){window.setTimeout(t,1e3/60)});
+
+	</script>
 </body>
 </html>
