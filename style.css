@@ -223,6 +223,22 @@ a {
 }
 
 /*====HOME UPDATED====*/
+.hp_btm_3 {
+	position: relative
+}
+.hp_btm_3 img {
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+}
+.hp_btm_3_title {
+	position: absolute;
+	left: -20px;
+	padding: 10px;
+	bottom: -20px;
+	background: #eee;
+	color: #000
+}
 .dots1 {
 	background: #ffffff;
 	background-image:
@@ -245,6 +261,22 @@ a {
 	background-position: 0 0, 15px 15px;
 	height: 35%;
 	bottom: 0;
+	width: 190px;
+	position: absolute;
+	margin-bottom: -60px
+}
+.content-div {
+	position: relative
+}
+.dots3 {
+	background: #ffffff;
+	background-image:
+		radial-gradient(#e50a0a 20%, transparent 0),
+		radial-gradient(#e50a0a 20%, transparent 0);
+	background-size: 15px 15px;
+	background-position: 0 0, 15px 15px;
+	height: 400px;
+	top: 400px;
 	width: 190px;
 	position: absolute;
 	margin-bottom: -60px
@@ -770,6 +802,81 @@ a {
 .pages .page + .page {
 	margin-left: -2px;
 }
+
+/*====CONTACT UPDATED====*/
+.cbox_l {
+	height: 450px;
+	background: #22274d;
+	position: relative;
+}
+.socialbox li {
+	display: inline-block;
+	list-style: none;
+	text-align: center;
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+	line-height: 40px;
+	background: #fff;
+	margin: 23px 10px 0px
+}
+.socialbox {
+	text-align: center;
+	height: 80px;
+	line-height: 50px;
+	background: #282e62
+}
+.socialbox li a {
+	color: #282e62;
+}
+.cbox_l_info {
+	width: 90%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 5%;
+	color: #fff;
+	padding-top: 80px
+}
+.cbox_l_info h4 {
+	color: #fff
+}
+.cbox_l_info button {
+	margin-bottom: 0px;
+}
+.formox {
+	height: 450px;
+	background: #eee;
+	position: relative
+}
+.inform {
+	width: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%)
+}
+.inform h4 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.inform input {
+	width: 90%;
+	background: transparent;
+	border: 2px solid #000;
+	border-radius: 40px;
+	height: 50px;
+	padding-left: 10px;
+	color: #000;
+	margin-bottom: 20px
+}
+.texteareas {
+	width: 95% !important;
+	height: 140px !important;
+	margin-bottom: 0px !important;
+	border-radius: 20px !important
+}
 /*====MISSION UPDATED====*/
 .mission2 {
 	width: 100%;
@@ -792,7 +899,9 @@ a {
 .mission3 {
 	width: 95%;
 	margin: auto;
-	display: block
+	display: block;
+    height: 700px;
+    object-fit: cover
 }
 .mission4 {
 	height: 250px;
@@ -802,7 +911,7 @@ a {
 }
 .mission5 {
 	width: 95%;
-	height: 650px;
+	height: 700px;
 	object-fit: cover;
 	margin: auto;
 	display: block
