@@ -1,7 +1,8 @@
 jQuery(document).ready(function($) {
   console.log('document ready');
   if (Modernizr.history) {
-
+        slideShowInit();
+        initParalax();
     $(window).bind("popstate", function() {
       link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
       //            alert(link);
