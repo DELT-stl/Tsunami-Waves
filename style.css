@@ -366,7 +366,7 @@ button {
     font-weight: bold;
     margin-top: 5%;
     border: 0;
-    position: relative;
+    position: absolute;
     z-index: 1;
     padding: 10px 25px
 }
